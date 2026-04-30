@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ladder Safety — Onestà General Contracting</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #0C1E35;
+  --blue:       #1E6FBF;
+  --blue-mid:   #2E8BE0;
+  --blue-light: #5BAAE8;
+  --blue-pale:  #EBF4FD;
+  --blue-pale2: #D4E9F7;
+  --slate:      #3A5068;
+  --gray-dark:  #263545;
+  --gray:       #4E6070;
+  --gray-mid:   #7A90A4;
+  --gray-light: #C5D3DE;
+  --gray-pale:  #EDF1F5;
+  --bg:         #F6F9FC;
+  --white:      #FFFFFF;
+  --red:        #B03A2E;
+  --red-pale:   #FBEAE8;
+  --red-border: #E8A99F;
+  --amber:      #9A6C0A;
+  --amber-pale: #FDF4E2;
+  --amber-bdr:  #E8C97A;
+  --green:      #1A6B3C;
+  --green-pale: #E6F4EC;
+  --green-bdr:  #7ECBA0;
+  --font-head:  'Sora', sans-serif;
+  --font-body:  'Source Serif 4', Georgia, serif;
+  --r:          8px;
+  --r-lg:       14px;
+  --shadow-sm:  0 1px 3px rgba(12,30,53,.06), 0 2px 8px rgba(12,30,53,.05);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--gray-dark); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+/* PAGE */
+.page { max-width: 960px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+
+/* MASTHEAD */
+.masthead { background: var(--navy); border-radius: var(--r-lg); padding: 2.75rem 2.75rem 2.25rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+.masthead::before { content:''; position:absolute; top:-80px; right:-80px; width:320px; height:320px; border-radius:50%; background:rgba(30,111,191,.18); pointer-events:none; }
+.masthead-eyebrow { font-family:var(--font-head); font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--blue-light); margin-bottom:.75rem; }
+.masthead h1 { font-family:var(--font-head); font-size:36px; font-weight:300; color:var(--white); letter-spacing:-.025em; line-height:1.15; margin-bottom:.6rem; }
+.masthead h1 strong { font-weight:700; }
+.masthead-sub { font-size:15px; color:rgba(255,255,255,.55); max-width:560px; line-height:1.6; margin-bottom:1.75rem; font-style:italic; }
+.masthead-tags { display:flex; gap:8px; flex-wrap:wrap; }
+.m-tag { font-family:var(--font-head); font-size:10px; font-weight:500; letter-spacing:.05em; text-transform:uppercase; padding:4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.6); }
+
+/* TAB NAV */
+.tab-nav-wrap { background:var(--white); border:1px solid var(--gray-light); border-radius:var(--r-lg); padding:6px; display:flex; gap:4px; flex-wrap:wrap; margin-bottom:2rem; box-shadow:var(--shadow-sm); position:sticky; top:12px; z-index:50; }
+.tab-btn { font-family:var(--font-head); font-size:12.5px; font-weight:500; color:var(--gray); background:none; border:none; border-radius:6px; padding:.5rem 1rem; cursor:pointer; transition:background .15s,color .15s; white-space:nowrap; }
+.tab-btn:hover { background:var(--gray-pale); color:var(--navy); }
+.tab-btn.active { background:var(--navy); color:var(--white); font-weight:600; }
+
+/* PANELS */
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* SECTIONS */
+.content-section { margin-bottom:3.5rem; }
+.section-label { font-family:var(--font-head); font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:.5rem; display:flex; align-items:center; gap:8px; }
+.section-label::after { content:''; flex:1; height:1px; background:var(--gray-light); max-width:60px; }
+.section-h2 { font-family:var(--font-head); font-size:22px; font-weight:600; color:var(--navy); letter-spacing:-.02em; line-height:1.25; margin-bottom:1.1rem; }
+.section-intro { font-size:15.5px; color:var(--gray); line-height:1.75; margin-bottom:1.25rem; max-width:700px; }
+.section-divider { border:none; border-top:1px solid var(--gray-light); margin:2.5rem 0; }
+
+/* CALLOUTS */
+.callout { border-radius:var(--r); padding:1rem 1.25rem; margin:1.25rem 0; border-left:3px solid; font-size:14.5px; line-height:1.65; }
+.callout-blue  { background:var(--blue-pale);  border-color:var(--blue-mid); color:#1A4470; }
+.callout-red   { background:var(--red-pale);   border-color:var(--red);      color:var(--red); }
+.callout-amber { background:var(--amber-pale); border-color:var(--amber);    color:var(--amber); }
+.callout-green { background:var(--green-pale); border-color:var(--green);    color:var(--green); }
+.callout strong { font-weight:600; font-family:var(--font-head); }
+
+/* STATS */
+.stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:1.25rem 0; }
+.stat-card { background:var(--white); border:1px solid var(--gray-light); border-radius:var(--r-lg); padding:1.25rem; box-shadow:var(--shadow-sm); }
+.stat-num { font-family:var(--font-head); font-size:30px; font-weight:700; letter-spacing:-.03em; line-height:1; color:var(--blue); margin-bottom:4px; }
+.stat-num.red   { color:var(--red); }
+.stat-num.amber { color:var(--amber); }
+.stat-label { font-family:var(--font-head); font-size:12px; color:var(--gray); line-height:1.4; }
+
+/* CARDS */
+.card-grid { display:grid; gap:12px; margin:1.25rem 0; }
+.card-grid-2 { grid-template-columns:1fr 1fr; }
+.card-grid-3 { grid-template-columns:repeat(3,1fr); }
+.info-card { background:var(--white); border:1px solid var(--gray-light); border-radius:var(--r-lg); padding:1.25rem 1.35rem; box-shadow:var(--shadow-sm); }
+.info-card-accent { border-top:3px solid var(--blue); }
+.info-card-red    { border-top:3px solid var(--red); }
+.info-card-amber  { border-top:3px solid var(--amber); }
+.info-card-green  { border-top:3px solid var(--green); }
+.card-head { font-family:var(--font-head); font-size:13px; font-weight:600; color:var(--navy); margin-bottom:.6rem; display:flex; align-items:center; gap:7px; }
+.card-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.dot-blue  { background:var(--blue); }
+.dot-red   { background:var(--red); }
+.dot-amber { background:var(--amber); }
+.dot-green { background:var(--green); }
+.card-body { font-size:13.5px; color:var(--gray); line-height:1.65; }
+
+/* ROLE CARDS */
+.role-card { background:var(--white); border:1px solid var(--gray-light); border-radius:var(--r-lg); padding:1.5rem 1.75rem; box-shadow:var(--shadow-sm); }
+.role-title { font-family:var(--font-head); font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:.875rem; padding-bottom:.6rem; border-bottom:1px solid var(--gray-pale); }
+.role-card.employee .role-title { color:var(--blue); }
+.role-card.supervisor .role-title { color:var(--slate); }
+
+/* LISTS */
+.content-list { list-style:none; }
+.content-list li { display:flex; gap:10px; padding:.45rem 0; font-size:14.5px; color:var(--gray-dark); border-bottom:1px solid var(--gray-pale); line-height:1.55; align-items:flex-start; }
+.content-list li:last-child { border-bottom:none; }
+.list-marker { width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; font-family:var(--font-head); font-size:10px; font-weight:600; }
+.marker-blue  { background:var(--blue-pale2); color:var(--blue); }
+.marker-red   { background:var(--red-pale);   color:var(--red); }
+.marker-check { background:var(--green-pale); color:var(--green); font-size:11px; }
+
+/* HAZARDS */
+.hazard-list { margin:1.25rem 0; }
+.hazard-row { display:flex; align-items:flex-start; gap:12px; padding:1rem 0; border-bottom:1px solid var(--gray-pale); }
+.hazard-row:last-child { border-bottom:none; }
+.sev { font-family:var(--font-head); font-size:9px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:3px 9px; border-radius:20px; flex-shrink:0; margin-top:3px; }
+.sev-high { background:var(--red-pale);   color:var(--red); }
+.sev-mod  { background:var(--amber-pale); color:var(--amber); }
+.hazard-name { font-family:var(--font-head); font-size:14px; font-weight:600; color:var(--navy); display:block; margin-bottom:3px; }
+.hazard-desc { font-size:13.5px; color:var(--gray); line-height:1.6; }
+.hazard-consequence { display:inline-block; margin-top:5px; font-family:var(--font-head); font-size:11px; color:var(--red); background:var(--red-pale); border-radius:4px; padding:2px 8px; }
+
+/* DO/DON'T */
+.do-dont { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:1.25rem 0; }
+.do-col   { background:var(--green-pale); border:1px solid var(--green-bdr); border-radius:var(--r); padding:1.1rem 1.25rem; }
+.dont-col { background:var(--red-pale);   border:1px solid var(--red-border); border-radius:var(--r); padding:1.1rem 1.25rem; }
+.col-head { font-family:var(--font-head); font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:.6rem; display:flex; align-items:center; gap:7px; }
+.do-col .col-head   { color:var(--green); }
+.dont-col .col-head { color:var(--red); }
+.col-icon { width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:9px; flex-shrink:0; }
+.do-col .col-icon   { background:var(--green); color:#fff; }
+.dont-col .col-icon { background:var(--red);   color:#fff; }
+.do-col li, .dont-col li { list-style:none; font-family:var(--font-head); font-size:13px; color:var(--gray-dark); line-height:1.55; padding:4px 0; }
+
+/* PROCESS */
+.process { margin:1.25rem 0; }
+.proc-step { display:flex; gap:14px; padding:.75rem 0; position:relative; }
+.proc-step:not(:last-child)::after { content:''; position:absolute; left:13px; top:44px; width:1px; height:calc(100% - 18px); background:var(--gray-light); }
+.step-bubble { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-head); font-size:12px; font-weight:700; flex-shrink:0; position:relative; z-index:1; }
+.bubble-blue  { background:var(--blue-pale2); color:var(--blue);  border:1.5px solid var(--blue-light); }
+.bubble-green { background:var(--green-pale); color:var(--green); border:1.5px solid var(--green-bdr); }
+.step-content strong { font-family:var(--font-head); font-size:14px; font-weight:600; color:var(--navy); display:block; margin-bottom:2px; }
+.step-content p { font-size:13.5px; color:var(--gray); line-height:1.6; }
+
+/* CHECKLIST */
+.check-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:1.25rem 0; }
+.check-item { display:flex; align-items:flex-start; gap:9px; background:var(--white); border:1px solid var(--gray-light); border-radius:var(--r); padding:.75rem .9rem; box-shadow:var(--shadow-sm); }
+.check-box { width:18px; height:18px; border-radius:4px; background:var(--blue-pale2); border:1.5px solid var(--blue-light); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+.check-box svg { width:10px; height:10px; }
+.check-label  { font-family:var(--font-head); font-size:13px; font-weight:500; color:var(--navy); margin-bottom:1px; line-height:1.3; }
+.check-detail { font-family:var(--font-head); font-size:11.5px; color:var(--gray); line-height:1.4; }
+
+/* WAC CARDS */
+.wac-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:1.25rem 0; }
+.wac-card { background:var(--white); border:1px solid var(--gray-light); border-radius:var(--r-lg); padding:1.25rem; box-shadow:var(--shadow-sm); border-top:3px solid var(--blue); }
+.wac-card.amber-top { border-top-color:var(--amber); }
+.wac-card.red-top   { border-top-color:var(--red); }
+.wac-code  { font-family:var(--font-head); font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--blue); margin-bottom:5px; }
+.wac-card.amber-top .wac-code { color:var(--amber); }
+.wac-card.red-top   .wac-code { color:var(--red); }
+.wac-title { font-family:var(--font-head); font-size:14px; font-weight:600; color:var(--navy); margin-bottom:6px; }
+.wac-body  { font-size:13px; color:var(--gray); line-height:1.6; }
+.wac-link  { display:inline-block; margin-top:8px; font-family:var(--font-head); font-size:11px; color:var(--blue); text-decoration:none; font-weight:500; }
+.wac-link:hover { text-decoration:underline; }
+
+/* DUTY TABLE */
+.duty-table { width:100%; border-collapse:collapse; margin:1.25rem 0; font-family:var(--font-head); font-size:13.5px; }
+.duty-table th { background:var(--navy); color:var(--white); font-weight:600; font-size:11px; letter-spacing:.04em; text-transform:uppercase; padding:.6rem 1rem; text-align:left; }
+.duty-table th:first-child { border-radius:var(--r) 0 0 0; }
+.duty-table th:last-child  { border-radius:0 var(--r) 0 0; }
+.duty-table td { padding:.65rem 1rem; border-bottom:1px solid var(--gray-pale); color:var(--gray-dark); vertical-align:middle; }
+.duty-table tr:last-child td { border-bottom:none; }
+.duty-table tr:nth-child(even) td { background:var(--gray-pale); }
+.duty-badge { display:inline-block; font-family:var(--font-head); font-size:10px; font-weight:700; letter-spacing:.05em; padding:2px 9px; border-radius:20px; }
+.badge-iaa { background:var(--red-pale);   color:var(--red); }
+.badge-ia  { background:var(--amber-pale); color:var(--amber); }
+.badge-i   { background:var(--blue-pale);  color:var(--blue); }
+.badge-ii  { background:var(--green-pale); color:var(--green); }
+.badge-iii { background:var(--gray-pale);  color:var(--gray-mid); }
+
+/* ANGLE DIAGRAM */
+.angle-diagram { background:var(--white); border:1px solid var(--gray-light); border-radius:var(--r-lg); padding:1.5rem; margin:1.25rem 0; box-shadow:var(--shadow-sm); display:flex; align-items:flex-start; gap:2rem; }
+.angle-visual { flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:.5rem; }
+.angle-caption { font-family:var(--font-head); font-size:11px; font-weight:600; color:var(--blue); text-transform:uppercase; letter-spacing:.05em; }
+.angle-info { flex:1; }
+.angle-rule { font-family:var(--font-head); font-size:24px; font-weight:700; color:var(--navy); margin-bottom:.4rem; }
+.angle-rule span { color:var(--blue-mid); }
+.angle-desc { font-size:14px; color:var(--gray); line-height:1.65; margin-bottom:1rem; }
+.angle-states { display:flex; flex-direction:column; gap:6px; }
+.angle-state { display:flex; align-items:center; gap:10px; font-family:var(--font-head); font-size:13px; color:var(--gray-dark); }
+.state-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+/* TAKEAWAYS */
+.takeaway-list { margin:1.25rem 0; }
+.tk-row { display:flex; align-items:center; gap:14px; padding:.7rem 0; border-bottom:1px solid var(--gray-pale); }
+.tk-row:last-child { border-bottom:none; }
+.tk-n { font-family:var(--font-head); font-size:11px; font-weight:600; color:var(--blue-mid); min-width:28px; flex-shrink:0; }
+.tk-text { font-family:var(--font-head); font-size:14px; color:var(--gray-dark); line-height:1.5; }
+.tk-text strong { font-weight:600; color:var(--navy); }
+
+/* CLOSING */
+.closing-banner { background:var(--navy); border-radius:var(--r-lg); padding:2.5rem 2.75rem; margin-top:3rem; position:relative; overflow:hidden; }
+.closing-banner::before { content:''; position:absolute; top:-60px; right:-60px; width:240px; height:240px; border-radius:50%; background:rgba(30,111,191,.15); pointer-events:none; }
+.closing-banner blockquote { font-size:20px; font-weight:300; color:var(--white); line-height:1.55; font-style:italic; max-width:580px; position:relative; }
+.closing-banner blockquote::before { content:'"'; position:absolute; top:-20px; left:-16px; font-size:80px; color:rgba(255,255,255,.07); font-family:Georgia,serif; line-height:1; pointer-events:none; }
+.closing-banner cite { display:block; margin-top:1.1rem; font-family:var(--font-head); font-size:12px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--blue-light); font-style:normal; }
+
+/* PRINT */
+@media print {
+  .tab-nav-wrap { display:none; }
+  .tab-panel { display:block !important; }
+}
+
+/* MOBILE */
+@media (max-width:640px) {
+  .page { padding:1.25rem 1rem 3rem; }
+  .masthead { padding:1.75rem 1.5rem; }
+  .masthead h1 { font-size:26px; }
+  .tab-btn { font-size:11px; padding:.4rem .65rem; }
+  .stat-row, .card-grid-3 { grid-template-columns:1fr 1fr; }
+  .card-grid-2, .wac-grid, .check-grid, .do-dont { grid-template-columns:1fr; }
+  .angle-diagram { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-eyebrow">Monthly Safety Meeting · Fall Protection Series</div>
+    <h1><strong>Ladder Safety</strong><br>Training Reference</h1>
+    <p class="masthead-sub">A field-level reference for site superintendents, carpenters, and laborers. Covers WA L&amp;I and federal OSHA requirements for ladder selection, setup, inspection, and safe use on general contracting and restoration job sites.</p>
+    <div class="masthead-tags">
+      <span class="m-tag">WAC 296-155-480</span>
+      <span class="m-tag">29 CFR 1926.1053</span>
+      <span class="m-tag">OSHA Subpart X</span>
+      <span class="m-tag">Fall Protection</span>
+      <span class="m-tag">All Field Crew</span>
+    </div>
+  </div>
+
+  <!-- TAB NAV -->
+  <div class="tab-nav-wrap">
+    <button class="tab-btn active"  data-tab="overview"   onclick="switchTab(this,'overview')">Overview</button>
+    <button class="tab-btn"         data-tab="equipment"  onclick="switchTab(this,'equipment')">Ladder Types &amp; Ratings</button>
+    <button class="tab-btn"         data-tab="setup"      onclick="switchTab(this,'setup')">Setup &amp; Use</button>
+    <button class="tab-btn"         data-tab="hazards"    onclick="switchTab(this,'hazards')">Hazards &amp; Prohibited</button>
+    <button class="tab-btn"         data-tab="leadership" onclick="switchTab(this,'leadership')">Leadership</button>
+    <button class="tab-btn"         data-tab="takeaways"  onclick="switchTab(this,'takeaways')">Key Takeaways</button>
+  </div>
+
+  <!-- ═══════════════════════════════
+       TAB 1 — OVERVIEW
+  ═══════════════════════════════ -->
+  <div class="tab-panel active" id="tab-overview">
+
+    <section class="content-section">
+      <div class="section-label">01 — Context</div>
+      <h2 class="section-h2">Why Ladder Safety Matters</h2>
+      <p class="section-intro">Falls from ladders are one of the leading causes of fatalities and serious injuries in construction. In Washington State and nationally, ladder incidents account for a disproportionate share of workers' compensation claims — and nearly every one of them is preventable.</p>
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-num red">300+</div><div class="stat-label">Workers die annually from ladder falls in the U.S. (BLS/CPSC)</div></div>
+        <div class="stat-card"><div class="stat-num amber">164K+</div><div class="stat-label">Emergency room visits per year due to ladder-related injuries</div></div>
+        <div class="stat-card"><div class="stat-num">81%</div><div class="stat-label">Of ladder injuries occur in construction and maintenance occupations</div></div>
+      </div>
+      <div class="callout callout-blue">
+        <strong>Key insight:</strong> Most ladder injuries don't happen on long, complex jobs at extreme heights. They happen during short-duration tasks — hanging drywall, accessing a roof hatch, reaching a ceiling — where the crew member felt the risk wasn't worth a proper setup. That assumption is exactly what causes the injury.
+      </div>
+      <p class="section-intro" style="margin-top:1rem">The three most common causes of ladder injuries on construction sites:</p>
+      <ul class="content-list">
+        <li><span class="list-marker marker-red">1</span><div><strong>Improper setup</strong> — wrong angle, unstable base, ladder too short, or leaned against an unsecured surface.</div></li>
+        <li><span class="list-marker marker-red">2</span><div><strong>Unsafe behavior while climbing</strong> — overreaching, carrying tools in-hand, skipping rungs, or losing three-point contact.</div></li>
+        <li><span class="list-marker marker-red">3</span><div><strong>Using a damaged or wrong-type ladder</strong> — defective rungs or rails, incorrect duty rating, or aluminum near electrical sources.</div></li>
+      </ul>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">02 — Critical Rules</div>
+      <h2 class="section-h2">Six Non-Negotiables</h2>
+      <p class="section-intro">These six rules apply to every ladder use, every time — regardless of task duration, height, or experience level. There are no exceptions on an Onestà job site.</p>
+      <div class="card-grid card-grid-2">
+        <div class="info-card info-card-red">
+          <div class="card-head"><span class="card-dot dot-red"></span>Right Ladder for the Job</div>
+          <div class="card-body">Select the correct ladder type and height for the task. Never use a step ladder as an extension ladder or vice versa. The ladder must reach the work point without standing on the top rungs.</div>
+        </div>
+        <div class="info-card info-card-red">
+          <div class="card-head"><span class="card-dot dot-red"></span>Three Points of Contact</div>
+          <div class="card-body">Two hands and one foot, or two feet and one hand, must be in contact with the ladder at all times while climbing or descending. Never release all three contact points simultaneously.</div>
+        </div>
+        <div class="info-card info-card-amber">
+          <div class="card-head"><span class="card-dot dot-amber"></span>Proper Angle (1:4 Rule)</div>
+          <div class="card-body">Extension ladders must be set at a 75° angle — 1 foot out from the base for every 4 feet of working height. Too steep tips backward; too shallow causes the feet to slide out.</div>
+        </div>
+        <div class="info-card info-card-amber">
+          <div class="card-head"><span class="card-dot dot-amber"></span>Secure the Ladder</div>
+          <div class="card-body">Whenever possible, tie off the top and/or bottom to a fixed anchor. At minimum, have a second person foot the ladder when it cannot be secured. Never leave an unsecured ladder in a traffic area.</div>
+        </div>
+        <div class="info-card info-card-accent">
+          <div class="card-head"><span class="card-dot dot-blue"></span>Never Stand on Top Step</div>
+          <div class="card-body">The top cap and top two rungs of a step ladder, and the top three rungs of an extension ladder, are prohibited standing positions. These place your center of gravity above the ladder's support envelope.</div>
+        </div>
+        <div class="info-card info-card-accent">
+          <div class="card-head"><span class="card-dot dot-blue"></span>Fiberglass Near Electricity</div>
+          <div class="card-body">Aluminum conducts electricity. Any time there is a possibility of contact with energized equipment, power lines, or live circuits — fiberglass is required. Assume all lines are live.</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">03 — Regulatory</div>
+      <h2 class="section-h2">WA L&amp;I &amp; Federal OSHA Requirements</h2>
+      <p class="section-intro">Ladder safety is regulated by both Washington State Labor &amp; Industries and federal OSHA. Violations can result in citations, fines, stop-work orders, and increased L&amp;I audit exposure.</p>
+      <div class="wac-grid">
+        <div class="wac-card">
+          <div class="wac-code">WAC 296-155-480</div>
+          <div class="wac-title">Ladders — General Requirements</div>
+          <div class="wac-body">Washington's primary ladder regulation for construction work sites. Covers ladder condition, load ratings, setup requirements, fall protection thresholds (6 ft in construction), and inspection obligations.</div>
+          <a class="wac-link" href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-155-480" target="_blank">View WAC 296-155-480 →</a>
+        </div>
+        <div class="wac-card amber-top">
+          <div class="wac-code">29 CFR 1926.1053</div>
+          <div class="wac-title">OSHA — Ladders (Construction)</div>
+          <div class="wac-body">Federal OSHA's ladder standard for construction. Specifies angle requirements, extension above landing (3 ft), rung spacing (10–14 in), load capacity, and prohibition on use during lightning or high winds.</div>
+          <a class="wac-link" href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053" target="_blank">View 29 CFR 1926.1053 →</a>
+        </div>
+        <div class="wac-card red-top">
+          <div class="wac-code">29 CFR 1926.1060</div>
+          <div class="wac-title">OSHA — Ladder Training</div>
+          <div class="wac-body">Requires employers to train each employee on fall hazards, correct procedures for erecting/using ladders, maximum load capacities, and inspection. Training must be conducted by a competent person.</div>
+          <a class="wac-link" href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1060" target="_blank">View 29 CFR 1926.1060 →</a>
+        </div>
+      </div>
+      <div class="callout callout-red">
+        <strong>Enforcement note:</strong> Falls from elevation are one of OSHA's "Fatal Four." WA L&amp;I has authority to issue fines up to $70,000 per willful violation. The fall protection threshold in Washington State construction is <strong>6 feet</strong> — more protective than general industry (4 ft).
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">04 — Accountability</div>
+      <h2 class="section-h2">Who Is Responsible?</h2>
+      <p class="section-intro">Ladder safety is a shared obligation. OSHA and WA L&amp;I impose specific duties on both workers and supervisors — and those duties cannot be delegated away.</p>
+      <div class="card-grid card-grid-2">
+        <div class="role-card employee info-card">
+          <div class="role-title">Employee Responsibilities</div>
+          <ul class="content-list">
+            <li><span class="list-marker marker-check">✓</span>Inspect every ladder before each use — no exceptions</li>
+            <li><span class="list-marker marker-check">✓</span>Select the correct ladder type and duty rating for the task</li>
+            <li><span class="list-marker marker-check">✓</span>Set up correctly — proper angle, stable surface, secured when possible</li>
+            <li><span class="list-marker marker-check">✓</span>Maintain three points of contact while climbing and descending</li>
+            <li><span class="list-marker marker-check">✓</span>Keep belt buckle between the side rails at all times</li>
+            <li><span class="list-marker marker-check">✓</span>Report damaged ladders immediately — tag out and remove from service</li>
+            <li><span class="list-marker marker-check">✓</span>Refuse to use a tagged-out ladder regardless of time pressure</li>
+            <li><span class="list-marker marker-check">✓</span>Speak up when you see an unsafe setup or behavior</li>
+          </ul>
+        </div>
+        <div class="role-card supervisor info-card">
+          <div class="role-title">Supervisor Responsibilities</div>
+          <ul class="content-list">
+            <li><span class="list-marker marker-blue">→</span>Act as the competent person for ladder inspection and setup on site</li>
+            <li><span class="list-marker marker-blue">→</span>Verify crew members have inspected ladders before work begins each day</li>
+            <li><span class="list-marker marker-blue">→</span>Ensure correct ladder type and rating is available for every planned task</li>
+            <li><span class="list-marker marker-blue">→</span>Remove defective ladders from service immediately — same day</li>
+            <li><span class="list-marker marker-blue">→</span>Correct unsafe setups and climbing behavior in the moment</li>
+            <li><span class="list-marker marker-blue">→</span>Document near-misses and incidents per the Accident Prevention Program</li>
+            <li><span class="list-marker marker-blue">→</span>Enforce fiberglass-only requirements near electrical hazards unconditionally</li>
+            <li><span class="list-marker marker-blue">→</span>Model correct ladder behavior — your crew follows your example</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout callout-blue">
+        <strong>Own It, Don't Hide It:</strong> If you find a damaged ladder, discover a defective rung, or observe someone climbing unsafely — say something immediately. Reporting issues is how we prevent injuries, not how we create problems.
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════════════════════
+       TAB 2 — EQUIPMENT
+  ═══════════════════════════════ -->
+  <div class="tab-panel" id="tab-equipment">
+
+    <section class="content-section">
+      <div class="section-label">05 — Equipment</div>
+      <h2 class="section-h2">Types of Ladders</h2>
+      <p class="section-intro">Each ladder type is designed for specific applications. Using the wrong type for a task isn't a minor shortcut — it's a setup failure that creates real fall risk. Know what you're picking up before you carry it to the job.</p>
+      <div class="card-grid card-grid-3">
+        <div class="info-card info-card-accent">
+          <div class="card-head"><span class="card-dot dot-blue"></span>Step Ladder</div>
+          <div class="card-body">Self-supporting, A-frame design. Used when no wall or structure is available for leaning. Available in 4–12 ft. Must be fully opened and locked before use. <strong>Never lean a step ladder against a wall in a closed position.</strong></div>
+        </div>
+        <div class="info-card info-card-accent">
+          <div class="card-head"><span class="card-dot dot-blue"></span>Extension Ladder</div>
+          <div class="card-body">Non-self-supporting. Must be leaned against a structure at the correct angle. Used for roof access and elevated work points. Must extend 3 ft above the landing point. Requires both hands free on approach and departure.</div>
+        </div>
+        <div class="info-card info-card-accent">
+          <div class="card-head"><span class="card-dot dot-blue"></span>Platform Ladder</div>
+          <div class="card-body">Self-supporting with a guarded standing platform at the top. Preferred for tasks requiring prolonged standing — drywall finishing, light fixture work, painting. More stable than standard step ladders for extended tasks.</div>
+        </div>
+      </div>
+      <div class="card-grid card-grid-2">
+        <div class="info-card info-card-amber">
+          <div class="card-head"><span class="card-dot dot-amber"></span>Articulating / Multi-Position Ladder</div>
+          <div class="card-body">Can be configured as step, extension, scaffold base, or staircase ladder. Common on renovation and restoration sites. <strong>Only use configurations listed in the manufacturer's instructions.</strong> Hinges must fully lock before climbing.</div>
+        </div>
+        <div class="info-card info-card-amber">
+          <div class="card-head"><span class="card-dot dot-amber"></span>Trestle / Scaffolding Ladders</div>
+          <div class="card-body">Used as supports for scaffold planks — not standalone climbing ladders. OSHA and WA L&amp;I have additional requirements for scaffold base ladders. Consult your competent person.</div>
+        </div>
+      </div>
+      <div class="callout callout-red">
+        <strong>Never improvise a ladder.</strong> Stacking materials, using shelving, or standing on equipment to reach height is a violation of WAC 296-155-480. If the right ladder isn't on site, stop and get one.
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">06 — Load Capacity</div>
+      <h2 class="section-h2">Duty Ratings — Know Before You Climb</h2>
+      <p class="section-intro">Every ladder has a maximum load rating that includes <strong>everything on the ladder</strong> — the worker, clothing, tools, materials, and any equipment being carried. Exceeding the rated load is a WAC and OSHA violation and can cause catastrophic structural failure.</p>
+      <table class="duty-table">
+        <thead>
+          <tr><th>Type</th><th>Max Load</th><th>Intended Use</th><th>Field Guidance</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="duty-badge badge-iaa">Type IAA</span></td>
+            <td><strong>375 lbs</strong></td>
+            <td>Special duty industrial</td>
+            <td>Highest rating available. Appropriate for workers carrying heavy tools or materials.</td>
+          </tr>
+          <tr>
+            <td><span class="duty-badge badge-ia">Type IA</span></td>
+            <td><strong>300 lbs</strong></td>
+            <td>Extra heavy-duty industrial</td>
+            <td><strong>Recommended minimum for most Onestà field applications.</strong> Accounts for a 200 lb worker plus tools and materials.</td>
+          </tr>
+          <tr>
+            <td><span class="duty-badge badge-i">Type I</span></td>
+            <td><strong>250 lbs</strong></td>
+            <td>Heavy-duty industrial</td>
+            <td>Acceptable for lighter workers with minimal tool load. A worker with a full tool belt can approach this limit quickly — when in doubt, use IA.</td>
+          </tr>
+          <tr>
+            <td><span class="duty-badge badge-ii">Type II</span></td>
+            <td><strong>225 lbs</strong></td>
+            <td>Medium-duty commercial</td>
+            <td><strong>Not recommended for construction job sites.</strong> Too low a margin for workers with tool loads and PPE.</td>
+          </tr>
+          <tr>
+            <td><span class="duty-badge badge-iii">Type III</span></td>
+            <td><strong>200 lbs</strong></td>
+            <td>Light-duty household</td>
+            <td><strong>Not permitted on Onestà job sites.</strong> Remove and replace immediately if found on site.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-amber">
+        <strong>The math matters:</strong> A 185 lb carpenter wearing boots, a tool belt, knee pads, and carrying lumber is likely already at 240–260 lbs before stepping on a ladder. Always account for your full working load — not just your body weight.
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">07 — Electrical Hazards</div>
+      <h2 class="section-h2">Electrical Safety and Ladder Material</h2>
+      <p class="section-intro">Electrocution from ladder contact with energized sources is a leading cause of ladder fatalities. Ladder material selection is one of the most critical decisions on restoration, renovation, and TI jobs where live circuits may be present or encountered unexpectedly.</p>
+      <div class="card-grid card-grid-2">
+        <div class="info-card info-card-green">
+          <div class="card-head"><span class="card-dot dot-green"></span>Fiberglass — Required Near Electricity</div>
+          <div class="card-body">Fiberglass is non-conductive. Required whenever there is any possibility of contact with energized equipment, overhead lines, exposed wiring, or live panels. This includes restoration scopes and TI work where circuits may be unexpectedly live.<br><br><strong>When in doubt, use fiberglass.</strong></div>
+        </div>
+        <div class="info-card info-card-red">
+          <div class="card-head"><span class="card-dot dot-red"></span>Aluminum — Prohibited Near Electricity</div>
+          <div class="card-body">Aluminum conducts electricity. Contact with an energized source can result in fatal electrocution. <strong>Never use aluminum ladders near electrical environments</strong> — panels, junction boxes, overhead utilities, or partially demolished structures.</div>
+        </div>
+      </div>
+      <div class="callout callout-red">
+        <strong>Assume all lines are live.</strong> On restoration and renovation sites, the energized status of wiring is often unknown. Never assume a circuit is dead without confirmation from a qualified electrician and verified lockout/tagout.
+      </div>
+      <p style="font-size:15px;color:var(--gray);line-height:1.7;margin:1.25rem 0">Minimum approach distances — overhead power lines (OSHA 29 CFR 1926.1408):</p>
+      <ul class="content-list">
+        <li><span class="list-marker marker-red">!</span><div><strong>Up to 300V:</strong> Avoid contact. Treat as energized.</div></li>
+        <li><span class="list-marker marker-red">!</span><div><strong>300V to 50kV:</strong> 10-foot minimum approach distance for unqualified workers.</div></li>
+        <li><span class="list-marker marker-red">!</span><div><strong>Over 50kV:</strong> Distance increases beyond 10 ft — consult your competent person and the utility company before any work in proximity.</div></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════════════════════
+       TAB 3 — SETUP & USE
+  ═══════════════════════════════ -->
+  <div class="tab-panel" id="tab-setup">
+
+    <section class="content-section">
+      <div class="section-label">08 — Pre-Use</div>
+      <h2 class="section-h2">Ladder Inspection Before Every Use</h2>
+      <p class="section-intro">WAC 296-155-480 requires that ladders be inspected before use — each day, before the ladder is put into service. A visual inspection takes less than 60 seconds and is your first line of defense against a fall caused by equipment failure.</p>
+      <div class="check-grid">
+        <div class="check-item">
+          <div class="check-box"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Side Rails</div><div class="check-detail">Check for cracks, bends, dents, or corrosion on both rails. Any structural deformation = remove from service immediately.</div></div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Rungs &amp; Steps</div><div class="check-detail">All rungs must be intact, evenly spaced, and free from cracks, bending, grease, oil, or dirt. Missing or broken rungs are immediate disqualifiers.</div></div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Feet / Slip-Resistant Pads</div><div class="check-detail">Rubber feet must be present, intact, and securely attached. Worn, hardened, or missing feet significantly increase slip risk at the base.</div></div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Locking Mechanisms</div><div class="check-detail">Rung locks and extension hooks must engage fully and positively. Test each locking point. A partially engaged lock can fail under load without warning.</div></div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Spreader Bars (Step Ladders)</div><div class="check-detail">Must be fully extended and locked before climbing. A step ladder not fully opened is structurally compromised and will collapse under load.</div></div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Duty Rating Label</div><div class="check-detail">Confirm the label is legible and appropriate for the planned task and user's loaded weight. Unreadable label = remove from service until identified.</div></div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Surface Cleanliness</div><div class="check-detail">Rungs, steps, and rails must be clean and dry. Mud, ice, drywall compound, and paint dramatically increase slip risk. Clean before use.</div></div>
+        </div>
+        <div class="check-item">
+          <div class="check-box"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">No Active Tags or Red-Lines</div><div class="check-detail">Check for existing out-of-service tags or markings. A tagged ladder is off-limits regardless of any other consideration.</div></div>
+        </div>
+      </div>
+      <div class="callout callout-red">
+        <strong>Tag out immediately.</strong> If any defect is found, mark the ladder "Do Not Use" and remove it from the work area. Report to your supervisor same day.
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">09 — Setup</div>
+      <h2 class="section-h2">Proper Ladder Setup</h2>
+      <p class="section-intro">A correctly chosen ladder on an improper setup is just as dangerous as a defective one. Most ladder falls begin at ground level — with a foundation that wasn't stable, level, or secured before anyone climbed.</p>
+      <div class="do-dont">
+        <div class="do-col">
+          <div class="col-head"><span class="col-icon">✓</span>Correct Setup</div>
+          <ul>
+            <li>Firm, level ground — free from debris and loose material</li>
+            <li>Ladder feet fully in contact with the surface</li>
+            <li>Extension ladders extend at least 3 ft above the landing</li>
+            <li>Ladder tied off at top or footed by a second person</li>
+            <li>Set at the correct 1:4 angle (75°)</li>
+            <li>Positioned to avoid doorways, walkways, and traffic zones</li>
+            <li>Barricade or warning signs around base in high-traffic areas</li>
+            <li>Both spreader bars locked (step ladders)</li>
+          </ul>
+        </div>
+        <div class="dont-col">
+          <div class="col-head"><span class="col-icon">✗</span>Incorrect Setup</div>
+          <ul>
+            <li>Soft ground, mud, ice, loose gravel, or uneven surfaces</li>
+            <li>Propped on boxes, buckets, lumber, or stacked materials</li>
+            <li>Extension ladder not reaching or barely reaching the landing</li>
+            <li>Unfooted, unsecured ladder left standing in a traffic area</li>
+            <li>Too steep or too shallow an angle</li>
+            <li>Placed in front of an unlocked, unmarked doorway</li>
+            <li>Step ladder partially open or leaned against wall while closed</li>
+            <li>Single side rail resting on a fragile or rounded surface</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout callout-blue">
+        <strong>3 feet above the landing point</strong> is a hard requirement under OSHA 29 CFR 1926.1053. This overhang gives the climber something to hold as they step on and off the ladder at the landing — the most dangerous transition.
+      </div>
+      <div class="process" style="margin-top:1.5rem">
+        <div class="proc-step">
+          <div class="step-bubble bubble-blue">1</div>
+          <div class="step-content"><strong>Evaluate the base surface</strong><p>Is it firm? Level? Free from debris? Address the surface before placing the ladder — don't compensate with ladder position.</p></div>
+        </div>
+        <div class="proc-step">
+          <div class="step-bubble bubble-blue">2</div>
+          <div class="step-content"><strong>Position and angle the ladder</strong><p>Set the base 1 foot out for every 4 feet of working height. Use the arm-length test: stand at the base, extend your arms — palms should reach the rung at shoulder height.</p></div>
+        </div>
+        <div class="proc-step">
+          <div class="step-bubble bubble-blue">3</div>
+          <div class="step-content"><strong>Secure top and bottom</strong><p>Tie off the top to a stable anchor if possible. If not, have a second person foot the ladder — both hands and one foot on the bottom rung, facing the ladder.</p></div>
+        </div>
+        <div class="proc-step">
+          <div class="step-bubble bubble-blue">4</div>
+          <div class="step-content"><strong>Control the hazard zone</strong><p>If the ladder is near a door, walkway, or active work area, establish a barrier, cone the area, or post a spotter.</p></div>
+        </div>
+        <div class="proc-step">
+          <div class="step-bubble bubble-green">5</div>
+          <div class="step-content"><strong>Test before you climb</strong><p>Give the ladder a firm test push at mid-height. It should not shift, rock, or tip. If it does, re-evaluate the base or add securing before proceeding.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">10 — The 1:4 Rule</div>
+      <h2 class="section-h2">Correct Ladder Angle</h2>
+      <p class="section-intro">The angle at which a non-self-supporting ladder is placed is one of the most critical factors in stability. OSHA 29 CFR 1926.1053 specifies the horizontal distance from the base to the vertical structure must be one-quarter the working length of the ladder.</p>
+      <div class="angle-diagram">
+        <div class="angle-visual">
+          <svg width="140" height="200" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="185" x2="140" y2="185" stroke="#C5D3DE" stroke-width="2"/>
+            <line x1="10" y1="0"   x2="10"  y2="185" stroke="#C5D3DE" stroke-width="2"/>
+            <line x1="55" y1="175" x2="10"  y2="10"  stroke="#1E6FBF" stroke-width="5" stroke-linecap="round"/>
+            <line x1="51" y1="148" x2="13"  y2="139" stroke="#1E6FBF" stroke-width="3" stroke-linecap="round"/>
+            <line x1="47" y1="121" x2="13"  y2="112" stroke="#1E6FBF" stroke-width="3" stroke-linecap="round"/>
+            <line x1="43" y1="94"  x2="12"  y2="85"  stroke="#1E6FBF" stroke-width="3" stroke-linecap="round"/>
+            <line x1="39" y1="67"  x2="11"  y2="58"  stroke="#1E6FBF" stroke-width="3" stroke-linecap="round"/>
+            <line x1="35" y1="40"  x2="11"  y2="32"  stroke="#1E6FBF" stroke-width="3" stroke-linecap="round"/>
+            <line x1="80" y1="10"  x2="80"  y2="175" stroke="#9A6C0A" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="86" y="100" font-size="10" fill="#9A6C0A" font-family="Sora,sans-serif" font-weight="600">4 ft</text>
+            <line x1="10" y1="185" x2="55"  y2="185" stroke="#9A6C0A" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="22" y="198" font-size="10" fill="#9A6C0A" font-family="Sora,sans-serif" font-weight="600">1 ft</text>
+            <path d="M 55,175 A 20,20 0 0,0 44,160" stroke="#E8600A" fill="none" stroke-width="2"/>
+            <text x="58" y="165" font-size="9" fill="#E8600A" font-family="Sora,sans-serif" font-weight="700">75°</text>
+          </svg>
+          <div class="angle-caption">1:4 Ratio · 75°</div>
+        </div>
+        <div class="angle-info">
+          <div class="angle-rule">1 ft out for every <span>4 ft up</span></div>
+          <p class="angle-desc">For every 4 feet of vertical working height, the base must be placed 1 foot out from the wall. A 20-foot ladder accessing a 16-foot wall should have its base 4 feet out. This produces the optimal 75° angle specified by OSHA.</p>
+          <div class="angle-states">
+            <div class="angle-state"><div class="state-dot" style="background:var(--green)"></div><strong>Correct (75°) —</strong>&nbsp;Stable under load. Weight transfers properly to the base.</div>
+            <div class="angle-state"><div class="state-dot" style="background:var(--red)"></div><strong>Too steep (&gt;75°) —</strong>&nbsp;Ladder tips backward. Top slides out under load.</div>
+            <div class="angle-state"><div class="state-dot" style="background:var(--amber)"></div><strong>Too shallow (&lt;75°) —</strong>&nbsp;Feet kick out. Buckling risk. Top slides down the wall.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-blue">
+        <strong>Field test — the arm-reach method:</strong> Stand upright at the base with your toes touching the feet. Extend your arms straight forward. If your palms rest comfortably on the rung at shoulder height, the angle is approximately correct.
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">11 — Technique</div>
+      <h2 class="section-h2">Safe Climbing Technique</h2>
+      <p class="section-intro">How you climb matters as much as how you set up. The majority of falls from properly set-up ladders happen because the climber broke one of these rules during ascent, work, or descent.</p>
+      <ul class="content-list">
+        <li><span class="list-marker marker-blue">→</span><div><strong>Face the ladder — always.</strong> Climb and descend facing the rungs. Never climb facing outward. Chest toward rungs at all times.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Three points of contact.</strong> Two hands + one foot, or two feet + one hand. Non-negotiable from the first rung to the last.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Keep your belt buckle between the rails.</strong> Your center of gravity must remain within the side rails at all times. Leaning outside the rails is one of the leading causes of overturning falls.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>One person at a time.</strong> No ladder shall be occupied by more than one person at a time. No exceptions for "just a second" hand-offs.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Move deliberately — no rushing.</strong> Grip firmly, move one rung at a time, do not skip rungs in either direction.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Hands on rungs, not rails.</strong> Gripping the rails instead of rungs dramatically reduces your ability to catch yourself if a foot slips.</div></li>
+      </ul>
+      <div class="callout callout-amber">
+        <strong>Descending is when most falls occur.</strong> Workers are more cautious going up than coming down. Take the same deliberate approach on descent — face the ladder, grip the rungs, three points of contact the entire way down.
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">12 — Tool Handling</div>
+      <h2 class="section-h2">Handling Tools and Materials on Ladders</h2>
+      <p class="section-intro">Carrying tools or materials while climbing is one of the most common ways workers break the three-points-of-contact rule. OSHA 29 CFR 1926.1053 requires workers to maintain a firm grip with both hands while ascending and descending.</p>
+      <div class="do-dont">
+        <div class="do-col">
+          <div class="col-head"><span class="col-icon">✓</span>Safe Practices</div>
+          <ul>
+            <li>Use a tool belt or tool pouch — hands completely free</li>
+            <li>Use a material hoist or rope-and-bucket for larger items</li>
+            <li>Pass materials to a second worker once at height with secure footing</li>
+            <li>Use a tool lanyard from your belt to tools needed at the work point</li>
+            <li>Make multiple trips rather than overload</li>
+          </ul>
+        </div>
+        <div class="dont-col">
+          <div class="col-head"><span class="col-icon">✗</span>Prohibited Practices</div>
+          <ul>
+            <li>Carrying tools in your hands while climbing or descending</li>
+            <li>Shouldering lumber, pipe, or sheet goods while on a ladder</li>
+            <li>Tucking tools under your arm and using only one hand on rungs</li>
+            <li>Carrying items that restrict your field of vision while climbing</li>
+            <li>Tossing tools or materials up to someone on a ladder</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout callout-blue">
+        <strong>If the item requires two hands to carry, it requires two people.</strong> One stages at the base, one at the landing. Hand off once fully positioned — never mid-climb.
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════════════════════
+       TAB 4 — HAZARDS & PROHIBITED
+  ═══════════════════════════════ -->
+  <div class="tab-panel" id="tab-hazards">
+
+    <section class="content-section">
+      <div class="section-label">13 — Prohibited Actions</div>
+      <h2 class="section-h2">What Is Never Permitted</h2>
+      <p class="section-intro">These actions are prohibited on all Onestà job sites. They are not judgment calls or situational exceptions — they are hard stops. If you observe any of these, address them immediately.</p>
+      <div class="hazard-list">
+        <div class="hazard-row">
+          <span class="sev sev-high">Prohibited</span>
+          <div>
+            <span class="hazard-name">Standing on the Top Step, Cap, or Top Rungs</span>
+            <span class="hazard-desc">The top two steps of a step ladder and the top three rungs of an extension ladder are never to be used as standing positions. This prohibition is clearly labeled on every compliant ladder. Working from the top step places your center of gravity above the ladder's stability envelope.</span>
+            <span class="hazard-consequence">OSHA 29 CFR 1926.1053 violation · High fall injury risk</span>
+          </div>
+        </div>
+        <div class="hazard-row">
+          <span class="sev sev-high">Prohibited</span>
+          <div>
+            <span class="hazard-name">Moving or Repositioning a Ladder While Occupied</span>
+            <span class="hazard-desc">A ladder must never be moved, shifted, extended, or repositioned while anyone is on it. Descend fully, reposition, re-secure, and re-inspect before re-climbing. No exceptions — including "just scooting it over a little."</span>
+            <span class="hazard-consequence">Immediate fall risk · Prohibited under WAC 296-155-480</span>
+          </div>
+        </div>
+        <div class="hazard-row">
+          <span class="sev sev-high">Prohibited</span>
+          <div>
+            <span class="hazard-name">Overreaching or Working Outside the Rail Width</span>
+            <span class="hazard-desc">If your belt buckle is outside the rails, you are overreaching. Descend, reposition the ladder, and climb again. The extra two minutes is not negotiable against a serious fall injury.</span>
+            <span class="hazard-consequence">Primary cause of overturn and tip-over falls</span>
+          </div>
+        </div>
+        <div class="hazard-row">
+          <span class="sev sev-high">Prohibited</span>
+          <div>
+            <span class="hazard-name">Use in High Wind or Adverse Conditions</span>
+            <span class="hazard-desc">Ladders shall not be used during high winds, active weather events, or when the work surface is icy or dangerously wet. OSHA specifically prohibits use during electrical storms. When conditions deteriorate, stop work and descend.</span>
+            <span class="hazard-consequence">OSHA 29 CFR 1926.1053(b)(7) · Stop work condition</span>
+          </div>
+        </div>
+        <div class="hazard-row">
+          <span class="sev sev-mod">Prohibited</span>
+          <div>
+            <span class="hazard-name">Using a Defective or Tagged-Out Ladder</span>
+            <span class="hazard-desc">A ladder identified as defective and tagged out is not to be used under any circumstances — regardless of how minor the damage appears, how urgent the task is, or what any supervisor says. No schedule pressure overrides this.</span>
+            <span class="hazard-consequence">WAC 296-155-480 violation · L&amp;I citation risk</span>
+          </div>
+        </div>
+        <div class="hazard-row">
+          <span class="sev sev-mod">Prohibited</span>
+          <div>
+            <span class="hazard-name">Using a Ladder as a Work Platform or Horizontal Brace</span>
+            <span class="hazard-desc">Ladders are not to be used on their side, laid across two supports as a plank, or used as a scaffold component unless specifically designed and rated for that use. This bypasses the ladder's structural design and load path entirely.</span>
+            <span class="hazard-consequence">Structural failure risk · Prohibited under manufacturer guidelines</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">14 — Hazard Recognition</div>
+      <h2 class="section-h2">Common Hazards on Our Job Sites</h2>
+      <p class="section-intro">General contracting, TI, and restoration work creates specific ladder hazards different from new construction. Many of these require active recognition — not just rule-following.</p>
+      <div class="card-grid card-grid-2">
+        <div class="info-card info-card-red">
+          <div class="card-head"><span class="card-dot dot-red"></span>Wet and Contaminated Surfaces</div>
+          <div class="card-body">Restoration scopes frequently involve water-damaged structures, active leaks, or wet flooring. Rungs with drywall mud, paint, or spray foam lose their slip resistance. Clean rungs before climbing. Never set ladder feet in standing water.</div>
+        </div>
+        <div class="info-card info-card-red">
+          <div class="card-head"><span class="card-dot dot-red"></span>Uneven or Unstable Flooring</div>
+          <div class="card-body">Demo scopes, structural repairs, and subfloor work can leave floor surfaces uneven, weak, or partially removed. Ladder feet placed on compromised flooring can punch through or collapse. Probe questionable surfaces before placing weight on them.</div>
+        </div>
+        <div class="info-card info-card-amber">
+          <div class="card-head"><span class="card-dot dot-amber"></span>Overhead Electrical and Mechanical</div>
+          <div class="card-body">TI work frequently involves overhead utilities in close proximity to ladder tops. Know what is above you before you climb. Mark energized equipment. Use fiberglass when in doubt about electrical proximity.</div>
+        </div>
+        <div class="info-card info-card-amber">
+          <div class="card-head"><span class="card-dot dot-amber"></span>High-Traffic Work Areas</div>
+          <div class="card-body">Active construction sites have foot traffic from multiple trades. Ladders in corridors, near doorways, and in open bays are vulnerable to being bumped by other workers or equipment movement. Barrier and communicate.</div>
+        </div>
+        <div class="info-card info-card-accent">
+          <div class="card-head"><span class="card-dot dot-blue"></span>Limited-Access and Confined Spaces</div>
+          <div class="card-body">Crawlspaces, attics, mechanical rooms, and shaft access points often require short ladder use in tight quarters where proper angle cannot be achieved. Evaluate whether a step stool or platform scaffold may be more appropriate.</div>
+        </div>
+        <div class="info-card info-card-accent">
+          <div class="card-head"><span class="card-dot dot-blue"></span>End-of-Day Fatigue</div>
+          <div class="card-body">Falls are disproportionately likely in the last two hours of a shift, when fatigue reduces grip strength, balance, and attention. Supervisors should be more watchful during this window. If you're fatigued, that's not the time to climb to 14 feet.</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="content-section">
+      <div class="section-label">15 — Stop Work Authority</div>
+      <h2 class="section-h2">When to Stop Work</h2>
+      <p class="section-intro">Every Onestà field employee has the unconditional authority to stop work when a ladder-related safety condition cannot be adequately controlled. Stop Work Authority cannot be overridden by schedule pressure, client requests, or supervisor instructions.</p>
+      <div class="callout callout-green">
+        <strong>Stop Work Authority is unconditional.</strong> No supervisor, client, or schedule pressure overrides your right to stop an unsafe operation. Stop, report, and do not resume until the hazard is addressed.
+      </div>
+      <ul class="content-list">
+        <li><span class="list-marker marker-red">!</span><div><strong>The ladder is defective, damaged, or tagged out</strong> — Any structural defect, missing feet, broken rungs, or existing tag is an immediate stop condition.</div></li>
+        <li><span class="list-marker marker-red">!</span><div><strong>The surface cannot be made stable</strong> — If the base cannot be placed on firm, level ground and no corrective measure can adequately stabilize it, the task must be re-evaluated for a different access method.</div></li>
+        <li><span class="list-marker marker-red">!</span><div><strong>Electrical hazards cannot be confirmed controlled</strong> — If the energized status of overhead lines, panels, or wiring cannot be confirmed through LOTO, and fiberglass is not available, stop and get the right equipment.</div></li>
+        <li><span class="list-marker marker-red">!</span><div><strong>Weather conditions create unacceptable risk</strong> — Active rain on an exterior metal ladder, high wind, or icing are stop conditions. These are not "use your best judgment" situations.</div></li>
+        <li><span class="list-marker marker-red">!</span><div><strong>A coworker is in a fall-risk position</strong> — If you observe another crew member overreaching or climbing a defective ladder, stop them immediately. A direct, respectful intervention is appropriate and expected.</div></li>
+      </ul>
+      <div class="callout callout-blue" style="margin-top:1.5rem">
+        <strong>After stopping:</strong> Notify your supervisor immediately. Describe what you observed. Document if it rises to the level of a near-miss or incident under the APP. Do not resume until the condition has been corrected and confirmed safe.
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════════════════════
+       TAB 5 — LEADERSHIP
+  ═══════════════════════════════ -->
+  <div class="tab-panel" id="tab-leadership">
+
+    <section class="content-section">
+      <div class="section-label">16 — Leadership</div>
+      <h2 class="section-h2">Supervisor Expectations</h2>
+      <p class="section-intro">Supervisors are the most important variable in ladder safety compliance on any job site. Under OSHA 29 CFR 1926.1060, a competent person is required to oversee ladder setup and use. On Onestà sites, site superintendents are the designated competent persons for ladder safety.</p>
+      <ul class="content-list">
+        <li><span class="list-marker marker-blue">→</span><div><strong>Conduct or verify pre-use inspections daily.</strong> Before ladder work begins each day, confirm that crew members have inspected their ladders. The pre-use inspection requirement applies every single day.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Ensure correct ladder types and ratings are on site before the task begins.</strong> If the work requires a 24-foot Type IA extension ladder, that ladder must be staged before the crew starts. Improvising with what's available is a supervision failure.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Remove defective ladders immediately — same day.</strong> A tagged ladder that stays on site because a replacement wasn't sourced is a compliance violation. Plan for replacements in your project staging.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Correct unsafe setups and behaviors in the moment.</strong> Addressing an overreaching situation after the shift ends is not enforcement — it's documentation after the near-miss already happened. Address it when you see it.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Document near-misses and incidents.</strong> Washington State requires near-misses and incidents be logged as part of the Accident Prevention Program. Ladder near-misses must be reported — they are free warnings about your site conditions.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Enforce fiberglass requirements unconditionally near electrical hazards.</strong> "They're careful around it" is not an acceptable response to an aluminum ladder near a live panel. Fiberglass is a site requirement with no exceptions.</div></li>
+        <li><span class="list-marker marker-blue">→</span><div><strong>Model the behavior.</strong> If a superintendent is observed skipping rungs, carrying tools in-hand up a ladder, or not footing a ladder, it directly undermines every safety message delivered at toolbox talks. Prepare Humbly, Perform Confidently — that applies to safety leadership first.</div></li>
+      </ul>
+      <div class="callout callout-blue" style="margin-top:1.5rem">
+        <strong>Start Strong, Finish Strong:</strong> Safety leadership isn't a morning task list — it's an all-day standard. The last hour of the shift is when fatigue sets in and shortcuts happen. That's when supervisor presence matters most.
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════════════════════
+       TAB 6 — KEY TAKEAWAYS
+  ═══════════════════════════════ -->
+  <div class="tab-panel" id="tab-takeaways">
+
+    <section class="content-section">
+      <div class="section-label">17 — Summary</div>
+      <h2 class="section-h2">Key Takeaways</h2>
+      <p class="section-intro">If there are six things every Onestà field employee remembers from this resource, these are them.</p>
+      <div class="takeaway-list">
+        <div class="tk-row"><span class="tk-n">01</span><div class="tk-text"><strong>Right ladder, right rating, every time.</strong> Type IA minimum on construction sites. Fiberglass near electricity. No exceptions based on job duration or task urgency.</div></div>
+        <div class="tk-row"><span class="tk-n">02</span><div class="tk-text"><strong>Inspect before every use — every day.</strong> Rails, rungs, feet, locks, spreaders. Less than 60 seconds. Required by WAC 296-155-480. Non-negotiable.</div></div>
+        <div class="tk-row"><span class="tk-n">03</span><div class="tk-text"><strong>Set it up correctly or don't climb.</strong> Firm ground, 1:4 angle, 3 feet above the landing, secured or footed. Shortcuts at setup are how falls begin.</div></div>
+        <div class="tk-row"><span class="tk-n">04</span><div class="tk-text"><strong>Three points of contact — always.</strong> Two hands and one foot, or two feet and one hand. Belt buckle between the rails. Face the ladder up and down.</div></div>
+        <div class="tk-row"><span class="tk-n">05</span><div class="tk-text"><strong>Speak up and stop work.</strong> If a ladder is defective, the setup is wrong, or someone is climbing unsafely — say something. Stop Work Authority is unconditional.</div></div>
+        <div class="tk-row"><span class="tk-n">06</span><div class="tk-text"><strong>WA L&amp;I and OSHA compliance is not optional.</strong> WAC 296-155-480 and 29 CFR 1926.1053 are enforceable standards. The 6-foot fall protection threshold in Washington State construction applies. These are the floor — Onestà's expectations start there and go further.</div></div>
+      </div>
+    </section>
+
+    <div class="closing-banner">
+      <blockquote>Ladders are on every job site, every day. The rules are simple and the setups are repeatable. There is no task urgent enough to skip a safe setup. Get it right, every time.</blockquote>
+      <cite>Onestà General Contracting · Safety Program</cite>
+    </div>
+
+    <footer style="margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--gray-light);font-family:var(--font-head);font-size:11.5px;color:var(--gray-mid);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <span>Onestà General Contracting · Ladder Safety Resource</span>
+      <span>
+        <a href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-155-480" target="_blank" style="color:var(--blue);text-decoration:none">WAC 296-155-480</a> ·
+        <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053" target="_blank" style="color:var(--blue);text-decoration:none">29 CFR 1926.1053</a> ·
+        <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1060" target="_blank" style="color:var(--blue);text-decoration:none">29 CFR 1926.1060</a>
+      </span>
+    </footer>
+
+  </div>
+
+</div><!-- end page -->
+
+<script>
+  function switchTab(btn, id) {
+    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b)   { b.classList.remove('active'); });
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
