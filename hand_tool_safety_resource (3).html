@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hand Tool Safety — Onestà General Contracting</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F4F7FA;
+  color: #1E3145;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #1E6FBF; }
+
+/* ── PAGE SHELL ── */
+.page { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+/* ── MASTHEAD ── */
+.masthead {
+  background: #0C1E35;
+  border-radius: 14px;
+  padding: 2.25rem 2.5rem 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: rgba(30,111,191,.15);
+  pointer-events: none;
+}
+.mast-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #5BAAE8;
+  margin-bottom: .6rem;
+}
+.mast-title {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+  margin-bottom: .4rem;
+}
+.mast-title strong { font-weight: 600; }
+.mast-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  font-style: italic;
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+}
+.mast-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.mast-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 11px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.55);
+}
+
+/* ── TAB BAR ── */
+.tab-bar-wrap {
+  background: #fff;
+  border: 1px solid #D5E0EA;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  box-shadow: 0 1px 4px rgba(12,30,53,.06);
+}
+.tab-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #5A7490;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .12s, color .12s;
+  line-height: 1;
+}
+.tab-btn:hover { background: #EEF4FA; color: #1E3145; }
+.tab-btn.active {
+  background: #0C1E35;
+  color: #fff;
+}
+
+/* ── CONTENT PANELS ── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── SECTION CHROME ── */
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #1E6FBF;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #D5E0EA;
+  max-width: 48px;
+}
+.section-h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0C1E35;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.section-intro {
+  font-size: 14.5px;
+  color: #4E6070;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  max-width: 680px;
+}
+
+/* ── CARDS ── */
+.card-grid { display: grid; gap: 12px; margin: 1.25rem 0; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: repeat(3, 1fr); }
+.card {
+  background: #fff;
+  border: 1px solid #D5E0EA;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(12,30,53,.05);
+}
+.card-t3 { border-top: 3px solid #1E6FBF; }
+.card-t3.red   { border-top-color: #B03A2E; }
+.card-t3.amber { border-top-color: #9A6C0A; }
+.card-t3.green { border-top-color: #1A6B3C; }
+.card-t3.slate { border-top-color: #526880; }
+.card-head {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0C1E35;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-blue  { background: #1E6FBF; }
+.dot-red   { background: #B03A2E; }
+.dot-amber { background: #9A6C0A; }
+.dot-green { background: #1A6B3C; }
+.dot-slate { background: #526880; }
+.card-body { font-size: 13px; color: #4E6070; line-height: 1.65; }
+
+/* ── STAT ROW ── */
+.stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 1.25rem 0; }
+.stat-card {
+  background: #fff;
+  border: 1px solid #D5E0EA;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem 1rem;
+  box-shadow: 0 1px 3px rgba(12,30,53,.05);
+}
+.stat-num {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  color: #1E6FBF;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-num.red   { color: #B03A2E; }
+.stat-num.amber { color: #9A6C0A; }
+.stat-lbl { font-size: 12px; color: #5A7490; line-height: 1.4; }
+
+/* ── CALLOUTS ── */
+.callout {
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  border-left: 3px solid;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.callout strong { font-weight: 600; }
+.c-blue  { background: #EBF4FD; border-color: #1E6FBF; color: #1A4470; }
+.c-red   { background: #FBEAE8; border-color: #B03A2E; color: #7A2820; }
+.c-amber { background: #FDF4E2; border-color: #9A6C0A; color: #6B4A06; }
+.c-green { background: #E6F4EC; border-color: #1A6B3C; color: #134D2A; }
+
+/* ── CONTENT LIST ── */
+.clist { list-style: none; margin: 1.25rem 0; }
+.clist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: .5rem 0;
+  border-bottom: 1px solid #EEF3F7;
+  font-size: 14px;
+  color: #1E3145;
+  line-height: 1.6;
+}
+.clist li:last-child { border-bottom: none; }
+.mk {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-family: 'DM Mono', monospace;
+}
+.mk-blue  { background: #D4E9F7; color: #1E6FBF; }
+.mk-red   { background: #FBEAE8; color: #B03A2E; }
+.mk-check { background: #E6F4EC; color: #1A6B3C; font-size: 11px; }
+.mk-ban   { background: #FBEAE8; color: #B03A2E; font-size: 11px; }
+
+/* ── DO / DON'T ── */
+.do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1.25rem 0; }
+.do-col  { background: #E6F4EC; border: 1px solid #7ECBA0; border-radius: 10px; padding: 1rem 1.1rem; }
+.dn-col  { background: #FBEAE8; border: 1px solid #E8A99F; border-radius: 10px; padding: 1rem 1.1rem; }
+.col-hd  {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.do-col .col-hd { color: #1A6B3C; }
+.dn-col .col-hd { color: #B03A2E; }
+.col-icon {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px;
+  color: #fff;
+}
+.do-col .col-icon { background: #1A6B3C; }
+.dn-col .col-icon { background: #B03A2E; }
+.do-col li, .dn-col li {
+  list-style: none;
+  font-size: 13px;
+  color: #1E3145;
+  line-height: 1.55;
+  padding: 3px 0;
+}
+
+/* ── PROCESS STEPS ── */
+.proc { margin: 1.25rem 0; }
+.proc-step {
+  display: flex;
+  gap: 14px;
+  padding: .75rem 0;
+  position: relative;
+}
+.proc-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 13px; top: 46px;
+  width: 1px;
+  height: calc(100% - 20px);
+  background: #D5E0EA;
+}
+.bub {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  font-family: 'DM Mono', monospace;
+  flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.b-blue  { background: #D4E9F7; color: #1E6FBF; border: 1.5px solid #5BAAE8; }
+.b-red   { background: #FBEAE8; color: #B03A2E; border: 1.5px solid #E8A99F; }
+.b-amber { background: #FDF4E2; color: #9A6C0A; border: 1.5px solid #E8C97A; }
+.b-green { background: #E6F4EC; color: #1A6B3C; border: 1.5px solid #7ECBA0; }
+.step-c strong { font-size: 14px; font-weight: 600; color: #0C1E35; display: block; margin-bottom: 2px; }
+.step-c p { font-size: 13px; color: #4E6070; line-height: 1.6; }
+
+/* ── CHECKLIST GRID ── */
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 1.25rem 0; }
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  background: #fff;
+  border: 1px solid #D5E0EA;
+  border-radius: 8px;
+  padding: .7rem .9rem;
+}
+.chk-box {
+  width: 18px; height: 18px;
+  border-radius: 4px;
+  background: #D4E9F7;
+  border: 1.5px solid #5BAAE8;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #1E6FBF;
+  font-size: 10px;
+  font-weight: 700;
+}
+.chk-label { font-size: 13px; font-weight: 600; color: #0C1E35; margin-bottom: 1px; line-height: 1.3; }
+.chk-detail { font-size: 11.5px; color: #5A7490; line-height: 1.4; }
+
+/* ── WAC CARDS ── */
+.wac-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 1.25rem 0; }
+.wac-card {
+  background: #fff;
+  border: 1px solid #D5E0EA;
+  border-top: 3px solid #1E6FBF;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+}
+.wac-card.amber { border-top-color: #9A6C0A; }
+.wac-card.red   { border-top-color: #B03A2E; }
+.wac-code {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #1E6FBF;
+  margin-bottom: 4px;
+}
+.wac-card.amber .wac-code { color: #9A6C0A; }
+.wac-card.red   .wac-code { color: #B03A2E; }
+.wac-title { font-size: 14px; font-weight: 600; color: #0C1E35; margin-bottom: 5px; }
+.wac-body  { font-size: 12.5px; color: #4E6070; line-height: 1.6; }
+.wac-link  { display: inline-block; margin-top: 7px; font-size: 11px; color: #1E6FBF; text-decoration: none; font-weight: 500; }
+.wac-link:hover { text-decoration: underline; }
+
+/* ── PPE ROWS ── */
+.ppe-list { margin: 1.25rem 0; display: flex; flex-direction: column; gap: 8px; }
+.ppe-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: .8rem 1rem;
+  background: #fff;
+  border: 1px solid #D5E0EA;
+  border-radius: 10px;
+}
+.ppe-ic {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: #EBF4FD;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ppe-ic svg { width: 16px; height: 16px; color: #1E6FBF; }
+.ppe-name { font-size: 13px; font-weight: 600; color: #0C1E35; }
+.ppe-detail { font-size: 11.5px; color: #5A7490; margin-top: 1px; }
+.ppe-req {
+  margin-left: auto;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+.req-always { background: #FBEAE8; color: #B03A2E; }
+.req-when   { background: #FDF4E2; color: #9A6C0A; }
+.req-site   { background: #EBF4FD; color: #1E6FBF; }
+
+/* ── HAZARD ROWS ── */
+.hz-list { margin: 1.25rem 0; }
+.hz-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: .9rem 0;
+  border-bottom: 1px solid #EEF3F7;
+}
+.hz-row:last-child { border-bottom: none; }
+.sev {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.sev-h { background: #FBEAE8; color: #B03A2E; }
+.sev-m { background: #FDF4E2; color: #9A6C0A; }
+.sev-l { background: #EBF4FD; color: #1E6FBF; }
+.hz-name { font-size: 13.5px; font-weight: 600; color: #0C1E35; display: block; margin-bottom: 2px; }
+.hz-desc { font-size: 13px; color: #4E6070; line-height: 1.6; }
+.hz-tag {
+  display: inline-block;
+  margin-top: 5px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #B03A2E;
+  background: #FBEAE8;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+/* ── DISCUSSION CARDS ── */
+.disc-list { display: flex; flex-direction: column; gap: 8px; margin: 1.25rem 0; }
+.disc-card {
+  background: #fff;
+  border: 1px solid #D5E0EA;
+  border-left: 3px solid #1E6FBF;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  gap: 12px;
+}
+.disc-n {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #1E6FBF;
+  background: #EBF4FD;
+  border-radius: 5px;
+  padding: 2px 8px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  height: fit-content;
+}
+.disc-q { font-size: 13.5px; font-weight: 500; color: #0C1E35; margin-bottom: 3px; }
+.disc-sub { font-size: 12px; color: #5A7490; font-style: italic; }
+
+/* ── TAKEAWAYS ── */
+.tk-list { margin: 1.25rem 0; }
+.tk-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: .7rem 0;
+  border-bottom: 1px solid #EEF3F7;
+}
+.tk-row:last-child { border-bottom: none; }
+.tk-n {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: #1E6FBF;
+  min-width: 26px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.tk-txt { font-size: 14px; color: #1E3145; line-height: 1.55; }
+.tk-txt strong { font-weight: 600; color: #0C1E35; }
+
+/* ── ROLE CARDS ── */
+.role-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #EEF3F7;
+}
+.role-title.blue  { color: #1E6FBF; }
+.role-title.slate { color: #526880; }
+
+/* ── CLOSING BANNER ── */
+.closing {
+  background: #0C1E35;
+  border-radius: 12px;
+  padding: 2.25rem 2.5rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.closing::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(30,111,191,.15);
+  pointer-events: none;
+}
+.closing blockquote {
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 560px;
+  position: relative;
+}
+.closing cite {
+  display: block;
+  margin-top: .875rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #5BAAE8;
+  font-style: normal;
+}
+
+/* ── DIVIDER ── */
+hr.div { border: none; border-top: 1px solid #E8EFF5; margin: 2rem 0; }
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #D5E0EA;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #7A90A4;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer a { color: #1E6FBF; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .page { padding: 1rem 1rem 3rem; }
+  .masthead { padding: 1.75rem 1.25rem 1.5rem; }
+  .mast-title { font-size: 22px; }
+  .g2, .g3, .wac-grid, .check-grid, .do-dont, .stat-row { grid-template-columns: 1fr; }
+  .tab-btn { font-size: 11.5px; padding: 6px 10px; }
+}
+@media print {
+  .tab-btn { display: none; }
+  .tab-panel { display: block !important; }
+  .tab-panel + .tab-panel { page-break-before: always; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="mast-eyebrow">Safety Training · Hand Tools · Onestà General Contracting</div>
+    <h1 class="mast-title"><strong>Hand Tool</strong> Safety</h1>
+    <p class="mast-sub">Preventing injuries through proper selection, inspection, use, and maintenance — for field technicians, laborers, and supervisors.</p>
+    <div class="mast-tags">
+      <span class="mast-tag">WA L&I Compliant</span>
+      <span class="mast-tag">WAC 296-155-360</span>
+      <span class="mast-tag">OSHA 29 CFR 1926.301</span>
+      <span class="mast-tag">Monthly Safety Reference</span>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar-wrap" role="tablist">
+    <button class="tab-btn active" onclick="showTab('overview')"    role="tab">Overview</button>
+    <button class="tab-btn"        onclick="showTab('compliance')"  role="tab">Compliance</button>
+    <button class="tab-btn"        onclick="showTab('roles')"       role="tab">Roles</button>
+    <button class="tab-btn"        onclick="showTab('hazards')"     role="tab">Hazards</button>
+    <button class="tab-btn"        onclick="showTab('selection')"   role="tab">Selection</button>
+    <button class="tab-btn"        onclick="showTab('inspection')"  role="tab">Inspection</button>
+    <button class="tab-btn"        onclick="showTab('removal')"     role="tab">Removal</button>
+    <button class="tab-btn"        onclick="showTab('proper-use')"  role="tab">Proper Use</button>
+    <button class="tab-btn"        onclick="showTab('prohibited')"  role="tab">Prohibited</button>
+    <button class="tab-btn"        onclick="showTab('maintenance')" role="tab">Maintenance</button>
+    <button class="tab-btn"        onclick="showTab('storage')"     role="tab">Storage</button>
+    <button class="tab-btn"        onclick="showTab('ppe')"         role="tab">PPE</button>
+    <button class="tab-btn"        onclick="showTab('electrical')"  role="tab">Electrical</button>
+    <button class="tab-btn"        onclick="showTab('ergonomics')"  role="tab">Ergonomics</button>
+    <button class="tab-btn"        onclick="showTab('stop-work')"   role="tab">Stop Work</button>
+    <button class="tab-btn"        onclick="showTab('supervisor')"  role="tab">Supervisors</button>
+    <button class="tab-btn"        onclick="showTab('discussion')"  role="tab">Discussion</button>
+    <button class="tab-btn"        onclick="showTab('takeaways')"   role="tab">Takeaways</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 1: OVERVIEW -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel active" id="tab-overview">
+    <div class="section-eyebrow">01 — Overview</div>
+    <h2 class="section-h2">Small Tools. Serious Injuries.</h2>
+    <p class="section-intro">Hand tools are the most universally used equipment on any construction, renovation, or restoration job site — and among the most frequently misused. Because they're familiar, their hazards are easy to underestimate.</p>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-num">720K+</div><div class="stat-lbl">Hand tool injuries treated annually in the U.S. (BLS)</div></div>
+      <div class="stat-card"><div class="stat-num red">$30K+</div><div class="stat-lbl">Average direct cost of a single hand tool injury claim</div></div>
+      <div class="stat-card"><div class="stat-num amber">80%</div><div class="stat-lbl">Of injuries are considered preventable through proper practice</div></div>
+    </div>
+
+    <div class="callout c-blue">
+      <strong>Key insight:</strong> Most hand tool injuries don't happen during high-risk, complex tasks. They happen during routine, everyday work — because familiarity breeds complacency. Treating a common tool carelessly is how people get hurt.
+    </div>
+
+    <p class="section-intro" style="margin-top:1rem">The three most common causes of hand tool injuries are:</p>
+    <ul class="clist">
+      <li><span class="mk mk-red">1</span><div><strong>Improper use</strong> — using tools for tasks they weren't designed for, applying excessive force, or bypassing intended technique.</div></li>
+      <li><span class="mk mk-red">2</span><div><strong>Poor tool condition</strong> — damaged, dull, corroded, or defective tools that fail or perform unpredictably.</div></li>
+      <li><span class="mk mk-red">3</span><div><strong>Missing or inadequate PPE</strong> — no eye protection, wrong glove type, or footwear that doesn't meet jobsite standards.</div></li>
+    </ul>
+
+    <hr class="div">
+    <div class="section-eyebrow">02 — Real consequences</div>
+    <h2 class="section-h2">What Can Go Wrong?</h2>
+    <p class="section-intro">Hand tool injuries range from minor lacerations to permanent disability. Understanding the real consequences reinforces why every inspection and safety step matters.</p>
+
+    <div class="card-grid g2">
+      <div class="card card-t3 red">
+        <div class="card-head"><span class="dot dot-red"></span>Lacerations &amp; Punctures</div>
+        <div class="card-body">The most common hand tool injury. Cuts from utility knives, chisels, and saws can range from minor to tendon-deep, requiring stitches or surgery. Punctures from screwdrivers and awls can introduce infection or cause nerve damage.</div>
+      </div>
+      <div class="card card-t3 red">
+        <div class="card-head"><span class="dot dot-red"></span>Eye Injuries</div>
+        <div class="card-body">Flying fragments from mushroomed hammer heads or struck concrete travel at extremely high speed. Even small chips can permanently damage vision. OSHA estimates 90% of eye injuries could be prevented by proper eyewear.</div>
+      </div>
+      <div class="card card-t3 amber">
+        <div class="card-head"><span class="dot dot-amber"></span>Struck-By &amp; Impact Injuries</div>
+        <div class="card-body">Loose hammer heads, tool pieces that break under load, or tools dropped from height cause blunt-force trauma. Broken fingers, fractured hands, and head injuries are all documented consequences of impact tool failures.</div>
+      </div>
+      <div class="card card-t3 amber">
+        <div class="card-head"><span class="dot dot-amber"></span>Electrical Shock</div>
+        <div class="card-body">Using non-insulated tools near energized systems — even unexpectedly live circuits during restoration work — can cause electrocution. Contact with as little as 50 volts AC can be fatal under certain conditions.</div>
+      </div>
+      <div class="card card-t3 slate">
+        <div class="card-head"><span class="dot dot-slate"></span>Repetitive Strain Injuries</div>
+        <div class="card-body">Cumulative trauma from repeated gripping, striking, or awkward wrist positions leads to tendinitis, carpal tunnel syndrome, and trigger finger. These develop over weeks or months and can permanently affect a worker's ability to perform their job.</div>
+      </div>
+      <div class="card card-t3 slate">
+        <div class="card-head"><span class="dot dot-slate"></span>Organizational Costs</div>
+        <div class="card-body">Beyond the human cost: workers' comp claims, lost productivity, OSHA citations, project delays, and increased insurance premiums. A single serious incident can cost a small GC tens of thousands of dollars in direct and indirect costs.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 2: COMPLIANCE -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-compliance">
+    <div class="section-eyebrow">03 — Regulatory</div>
+    <h2 class="section-h2">WA L&amp;I Requirements</h2>
+    <p class="section-intro">Washington State Labor &amp; Industries enforces specific regulations for hand tool use on all construction and restoration job sites. These are enforceable standards — not guidelines — and violations can result in citations, fines, and increased audit exposure.</p>
+
+    <div class="wac-grid">
+      <div class="wac-card">
+        <div class="wac-code">WAC 296-155-360</div>
+        <div class="wac-title">Hand Tools</div>
+        <div class="wac-body">Tools must be maintained in a safe condition. They may only be used as intended by the manufacturer. Defective or damaged tools must be removed from service immediately and not returned until properly repaired or replaced.</div>
+        <a class="wac-link" href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-155-360" target="_blank">View regulation →</a>
+      </div>
+      <div class="wac-card amber">
+        <div class="wac-code">WAC 296-155-305</div>
+        <div class="wac-title">Equipment Condition</div>
+        <div class="wac-body">All tools and equipment must be inspected regularly. Inspections must occur before use. Equipment showing signs of deterioration, defect, or damage must be taken out of service until repaired or replaced.</div>
+        <a class="wac-link" href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-155-305" target="_blank">View regulation →</a>
+      </div>
+      <div class="wac-card red">
+        <div class="wac-code">WAC 296-800-160</div>
+        <div class="wac-title">PPE Requirements</div>
+        <div class="wac-body">Employers must assess workplace hazards and provide appropriate PPE. Employees must be trained on proper use. PPE must be maintained in sanitary and reliable condition. Employer bears the cost of required PPE.</div>
+        <a class="wac-link" href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-800-160" target="_blank">View regulation →</a>
+      </div>
+    </div>
+
+    <div class="callout c-red">
+      <strong>Enforcement note:</strong> These are not suggestions — they are enforceable requirements. WA L&I compliance officers inspect job sites, review Accident Prevention Programs (APPs), and issue citations. Federal OSHA 29 CFR 1926.301 also applies; WA standards meet or exceed federal minimums.
+    </div>
+
+    <div class="callout c-blue" style="margin-top:1rem">
+      <strong>Honesty is in our name:</strong> Compliance isn't just about avoiding fines. Doing the right thing — even when no one is watching — is how we protect our people and our reputation. These standards exist because people got hurt without them.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 3: ROLES -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-roles">
+    <div class="section-eyebrow">04 — Accountability</div>
+    <h2 class="section-h2">Who Is Responsible?</h2>
+    <p class="section-intro">Hand tool safety is a shared responsibility at every level. Both employees and supervisors have specific duties under WA L&I standards and Onestà's safety program.</p>
+
+    <div class="card-grid g2">
+      <div class="card">
+        <div class="role-title blue">Employee Responsibilities</div>
+        <ul class="clist">
+          <li><span class="mk mk-check">✓</span>Inspect every tool before each use</li>
+          <li><span class="mk mk-check">✓</span>Use tools only for their intended purpose</li>
+          <li><span class="mk mk-check">✓</span>Wear required PPE for the task</li>
+          <li><span class="mk mk-check">✓</span>Report defective or damaged tools immediately</li>
+          <li><span class="mk mk-check">✓</span>Never use a tool tagged out of service</li>
+          <li><span class="mk mk-check">✓</span>Follow proper use techniques at all times</li>
+          <li><span class="mk mk-check">✓</span>Speak up about unsafe practices you observe</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="role-title slate">Supervisor Responsibilities</div>
+        <ul class="clist">
+          <li><span class="mk mk-blue">→</span>Conduct or verify daily tool inspections before work begins</li>
+          <li><span class="mk mk-blue">→</span>Enforce proper tool use — address unsafe behavior immediately</li>
+          <li><span class="mk mk-blue">→</span>Remove defective tools from service without delay</li>
+          <li><span class="mk mk-blue">→</span>Ensure replacement tools are available before work resumes</li>
+          <li><span class="mk mk-blue">→</span>Document near-misses and incidents per the APP</li>
+          <li><span class="mk mk-blue">→</span>Enforce PPE compliance — no exceptions</li>
+          <li><span class="mk mk-blue">→</span>Model safe behavior at all times</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout c-blue">
+      <strong>Own It, Don't Hide It:</strong> If you damage a tool, spot a defect, or witness an unsafe practice — say something. Reporting issues promptly is how we prevent injuries, not how we get people in trouble.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 4: HAZARDS -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-hazards">
+    <div class="section-eyebrow">05 — Hazard Awareness</div>
+    <h2 class="section-h2">Common Hand Tool Hazards</h2>
+    <p class="section-intro">Recognizing the type of hazard helps workers choose the right control. Hand tool hazards fall into several categories, each with distinct injury mechanisms.</p>
+
+    <div class="hz-list">
+      <div class="hz-row"><span class="sev sev-h">High</span><div><span class="hz-name">Cuts, Lacerations &amp; Punctures</span><span class="hz-desc">From blades, chisels, saws, and screwdrivers. Occurs when tool slips, blade is dull, or proper grip is not maintained. High-risk tools: utility knives, box cutters, hand saws, awls.</span><span class="hz-tag">Requires immediate first aid — may require surgery</span></div></div>
+      <div class="hz-row"><span class="sev sev-h">High</span><div><span class="hz-name">Struck-By from Flying Fragments</span><span class="hz-desc">Metal chips from mushroomed hammer heads, shattered chisels, or snapped blades travel at high velocity. Eye injuries are the primary risk. High-risk tools: hammers, chisels, cold chisels, punches.</span><span class="hz-tag">Eye injury — potential permanent vision damage</span></div></div>
+      <div class="hz-row"><span class="sev sev-h">High</span><div><span class="hz-name">Electrical Shock from Improper Tool Use</span><span class="hz-desc">Using non-insulated tools near exposed or potentially live electrical circuits — common during TI, renovation, and restoration work where circuit status may be unknown. Risk increases in damp conditions.</span><span class="hz-tag">Electrocution, cardiac arrest, severe burns</span></div></div>
+      <div class="hz-row"><span class="sev sev-m">Mod</span><div><span class="hz-name">Impact Injuries from Tool Failures</span><span class="hz-desc">Loose or cracked handles that separate during use, heads that fly off, or workpieces that snap under force cause blunt trauma to hands, face, and body. Risk compounds when working overhead or in confined spaces.</span><span class="hz-tag">Fractures, bruising, potential head injury</span></div></div>
+      <div class="hz-row"><span class="sev sev-m">Mod</span><div><span class="hz-name">Slips Due to Worn or Contaminated Tools</span><span class="hz-desc">Worn screwdriver tips, stripped wrench surfaces, or oily grips cause tools to slip unexpectedly. The sudden loss of control redirects force into hands, fingers, or nearby workers. A leading cause of hand lacerations.</span><span class="hz-tag">Lacerations, crushed fingers, struck-by</span></div></div>
+      <div class="hz-row"><span class="sev sev-l">Ongoing</span><div><span class="hz-name">Repetitive Strain &amp; Cumulative Trauma</span><span class="hz-desc">Repeated gripping, twisting, hammering, or working in awkward positions over time leads to musculoskeletal disorders. These injuries develop gradually and are often dismissed until they become debilitating.</span><span class="hz-tag">Carpal tunnel, tendinitis, chronic hand/wrist pain</span></div></div>
+    </div>
+
+    <hr class="div">
+    <div class="section-eyebrow">06 — Identification</div>
+    <h2 class="section-h2">What Unsafe Tools Look Like</h2>
+    <p class="section-intro">Learning to visually identify a defective tool is a core skill. These are the most common defects found on construction job sites.</p>
+
+    <div class="card-grid g2">
+      <div class="card card-t3 red"><div class="card-head"><span class="dot dot-red"></span>Mushroomed Hammer Head</div><div class="card-body">The striking face has spread outward into a "mushroom" shape. The rolled edge can fracture and send metal fragments flying. <strong>Any mushrooming = immediate removal.</strong> Do not file it down and continue using it.</div></div>
+      <div class="card card-t3 red"><div class="card-head"><span class="dot dot-red"></span>Cracked or Loose Handles</div><div class="card-body">Wooden handles develop cracks along the grain; fiberglass handles can split or delaminate. A loose head can separate during the swing and become a projectile. <strong>Never tape a cracked handle</strong> — tape hides the defect and is not a repair.</div></div>
+      <div class="card card-t3 amber"><div class="card-head"><span class="dot dot-amber"></span>Worn Screwdriver Tips</div><div class="card-body">A rounded or chipped tip no longer seats properly in the fastener drive, causing cam-out — the tip jumps out of the screw and redirects force into the worker's hand. The fix is a new tip or bit, not more pressure.</div></div>
+      <div class="card card-t3 amber"><div class="card-head"><span class="dot dot-amber"></span>Dull Cutting Blades</div><div class="card-body">A dull blade requires significantly more force, which means less control. When the blade finally cuts through, the excess force carries it forward unpredictably. <strong>Dull is not safer</strong> — it transfers the risk from the material to the worker.</div></div>
+      <div class="card card-t3 red"><div class="card-head"><span class="dot dot-red"></span>Improvised Extensions ("Cheater Bars")</div><div class="card-body">Adding a pipe over a wrench to gain leverage exceeds the tool's rated capacity. This can snap the tool, damage the fastener, or cause sudden slippage — and is an explicit WAC violation under tool misuse provisions.</div></div>
+      <div class="card card-t3 slate"><div class="card-head"><span class="dot dot-slate"></span>Corroded or Contaminated Tools</div><div class="card-body">Surface rust weakens tool structure over time. Grease or oil on striking faces reduces friction. Contaminated insulated handles may no longer provide their rated voltage protection even if the outer surface appears intact.</div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 5: SELECTION -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-selection">
+    <div class="section-eyebrow">07 — Best Practice</div>
+    <h2 class="section-h2">Use the Right Tool</h2>
+    <p class="section-intro">Tool selection is the first safety decision made on any task. The right tool, properly sized and in good condition, is the foundation of every safe operation that follows.</p>
+
+    <div class="do-dont">
+      <div class="do-col">
+        <div class="col-hd"><span class="col-icon">✓</span>Do</div>
+        <ul>
+          <li>Match the tool precisely to the task and fastener/material</li>
+          <li>Use a properly sized wrench over an adjustable when available</li>
+          <li>Select insulated tools (1000V rated) any time circuit status is unknown</li>
+          <li>Use the correct screwdriver bit type and size</li>
+          <li>Consult manufacturer specifications for intended use</li>
+          <li>Request the right tool if it's not on site — don't improvise</li>
+        </ul>
+      </div>
+      <div class="dn-col">
+        <div class="col-hd"><span class="col-icon">✗</span>Don't</div>
+        <ul>
+          <li>Substitute a "close enough" tool under schedule pressure</li>
+          <li>Use pliers when a wrench is the correct tool</li>
+          <li>Use a screwdriver as a chisel, pry bar, or punch</li>
+          <li>Use a hammer as a pry bar or vise</li>
+          <li>Modify a tool to fit a task it wasn't designed for</li>
+          <li>Continue working with the wrong tool because "it worked before"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout c-amber">
+      <strong>Restoration &amp; TI note:</strong> On renovation and tenant improvement projects, assume circuits may be live until confirmed de-energized. Insulated tools with 1000V ratings are required for any work near electrical systems. This is not optional under WAC 296-155-360.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 6: INSPECTION -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-inspection">
+    <div class="section-eyebrow">08 — Procedure</div>
+    <h2 class="section-h2">Inspect Before Every Use</h2>
+    <p class="section-intro">Pre-use inspection is required by WAC 296-155-305 and is your most reliable defense against tool failure. A proper inspection takes less than 60 seconds per tool and must happen before every use — not once a week.</p>
+
+    <div class="check-grid">
+      <div class="check-item"><div class="chk-box">✓</div><div><div class="chk-label">Handle integrity</div><div class="chk-detail">No cracks, splinters, or delamination. Grip secure and free of excessive wear.</div></div></div>
+      <div class="check-item"><div class="chk-box">✓</div><div><div class="chk-label">Head seating (hammers, mallets)</div><div class="chk-detail">Head firmly seated — no wobble or movement. A loose head must be removed from service immediately.</div></div></div>
+      <div class="check-item"><div class="chk-box">✓</div><div><div class="chk-label">Striking face condition</div><div class="chk-detail">No mushrooming, chipping, or significant deformation on hammer heads or chisel tops.</div></div></div>
+      <div class="check-item"><div class="chk-box">✓</div><div><div class="chk-label">Cutting edge condition</div><div class="chk-detail">Blades sharp and undamaged. Saw teeth intact. Chisel edges ground correctly.</div></div></div>
+      <div class="check-item"><div class="chk-box">✓</div><div><div class="chk-label">Corrosion &amp; contamination</div><div class="chk-detail">No structural rust. No grease or oil on striking or grip surfaces.</div></div></div>
+      <div class="check-item"><div class="chk-box">✓</div><div><div class="chk-label">Insulation integrity</div><div class="chk-detail">Insulated handles free of cracks, cuts, or peeling. Any damage voids the voltage rating.</div></div></div>
+      <div class="check-item"><div class="chk-box">✓</div><div><div class="chk-label">Fasteners &amp; moving parts</div><div class="chk-detail">All nuts, bolts, and locking mechanisms properly tightened. Pivot joints move smoothly.</div></div></div>
+      <div class="check-item"><div class="chk-box">✓</div><div><div class="chk-label">Tags &amp; service status</div><div class="chk-detail">No "DO NOT USE" tag present. If a tag is present — the tool does not leave the bag.</div></div></div>
+    </div>
+
+    <div class="callout c-blue">
+      <strong>Good habit:</strong> Inspect tools when you pull them from your bag in the morning, not after you've started the task. A 60-second check at the beginning of the day catches problems before they become injuries.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 7: REMOVAL -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-removal">
+    <div class="section-eyebrow">09 — Procedure</div>
+    <h2 class="section-h2">If It's Defective — Remove It</h2>
+    <p class="section-intro">When a defective tool is identified, a clear, non-negotiable process must be followed. The standard is simple: <em>if you question it, don't use it.</em></p>
+
+    <div class="proc">
+      <div class="proc-step"><div class="bub b-amber">1</div><div class="step-c"><strong>Stop using the tool immediately</strong><p>Do not finish the current operation. Do not "just complete this one cut." Stop now. The task can wait — an injury cannot be undone.</p></div></div>
+      <div class="proc-step"><div class="bub b-red">2</div><div class="step-c"><strong>Tag "DO NOT USE"</strong><p>Apply a DO NOT USE tag or marking clearly visible to anyone who might pick up the tool. The tag stays until the tool is repaired by a qualified person or properly disposed of. Do not remove a tag placed by someone else.</p></div></div>
+      <div class="proc-step"><div class="bub b-red">3</div><div class="step-c"><strong>Physically remove from the work area</strong><p>Tagged tools must leave the immediate work area. A tool sitting next to your work, even with a tag, is a temptation when under schedule pressure. Remove it from reach entirely.</p></div></div>
+      <div class="proc-step"><div class="bub b-blue">4</div><div class="step-c"><strong>Notify your supervisor</strong><p>Report what was found and when. If tracking company tool inventory, log the removal. Own It, Don't Hide It — this applies equally to equipment as it does to performance.</p></div></div>
+      <div class="proc-step"><div class="bub b-green">5</div><div class="step-c"><strong>Obtain a replacement before continuing</strong><p>Work does not resume with that task until a proper, inspected replacement is in hand. Supervisors are responsible for ensuring replacements are available same-day.</p></div></div>
+    </div>
+
+    <div class="callout c-red">
+      <strong>If in doubt, pull it out.</strong> A replacement tool costs $20–$60. A workers' comp claim, lost time, and productivity impact from a single serious hand tool injury averages over $30,000 in direct and indirect costs.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 8: PROPER USE -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-proper-use">
+    <div class="section-eyebrow">10 — Technique</div>
+    <h2 class="section-h2">Use Tools Safely</h2>
+    <p class="section-intro">Proper technique is just as important as tool condition. Most in-use injuries happen because of poor body positioning, inadequate grip, or loss of control — all preventable with correct form.</p>
+
+    <div class="do-dont">
+      <div class="do-col">
+        <div class="col-hd"><span class="col-icon">✓</span>Safe Technique</div>
+        <ul>
+          <li>Cut away from your body at all times</li>
+          <li>Maintain a firm, full-hand grip on all tools</li>
+          <li>Keep hands clear of the cutting or impact zone</li>
+          <li>Secure workpieces in a vise or clamp before cutting or striking</li>
+          <li>Maintain stable footing and body balance before applying force</li>
+          <li>Pull wrenches toward you — maintain open, balanced stance</li>
+          <li>Use the full face of a hammer head for all strikes</li>
+          <li>Let the tool do the work — avoid excessive force</li>
+        </ul>
+      </div>
+      <div class="dn-col">
+        <div class="col-hd"><span class="col-icon">✗</span>Unsafe Technique</div>
+        <ul>
+          <li>Cutting toward yourself or a coworker</li>
+          <li>Holding a workpiece in your free hand while cutting</li>
+          <li>Striking with the cheek (side) of a hammer head</li>
+          <li>Pushing a wrench — if it slips, you fall forward</li>
+          <li>Overreaching or working off-balance to avoid repositioning</li>
+          <li>Forcing a close-fit bit — it will cam out and redirect force</li>
+          <li>Using one-finger or partial grip on tool handles</li>
+          <li>Working while fatigued with tools requiring focused control</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="div">
+    <div class="section-eyebrow">11 — Prohibited</div>
+    <h2 class="section-h2">Never Do This</h2>
+    <p class="section-intro">Certain practices are prohibited on all Onestà job sites without exception. These aren't edge cases — they are common field shortcuts that directly cause injuries and constitute WAC violations.</p>
+
+    <ul class="clist">
+      <li><span class="mk mk-ban">✗</span><div><strong>Using tools for unintended purposes</strong> — screwdriver as a chisel, knife as a pry tool, wrench as a hammer. Manufacturer safety ratings only apply to intended use.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Adding extensions for leverage ("cheater bars")</strong> — multiplies force beyond the tool's design limits. Can snap the tool, strip the fastener, or cause violent slippage. An explicit WAC violation.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Using any tool tagged "DO NOT USE"</strong> — removing a tag or using a tagged tool is a safety violation and a disciplinary matter. Tags exist because someone identified a real risk.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Removing guards or safety features</strong> — blade guards, depth stops, and safety mechanisms are injury prevention devices, not obstacles. Removing them is prohibited and may void L&I compliance.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Working with damaged tools under schedule pressure</strong> — "We'll fix it after the job" is never acceptable. Schedule pressure is not a justification for knowingly using an unsafe tool.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Leaving open blades or uncapped tools unattended</strong> — open utility knives or uncapped chisels in shared tool bags are a direct cause of lacerations. Always cap cutting tools when not actively in use.</div></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 9: PROHIBITED (maps to proper-use panel) -->
+  <!-- handled inside proper-use above -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-prohibited">
+    <div class="section-eyebrow">11 — Prohibited Practices</div>
+    <h2 class="section-h2">Never Do This</h2>
+    <p class="section-intro">Certain practices are prohibited on all Onestà job sites without exception. These aren't edge cases — they are common field shortcuts that directly cause injuries and constitute WAC violations.</p>
+
+    <ul class="clist">
+      <li><span class="mk mk-ban">✗</span><div><strong>Using tools for unintended purposes</strong> — screwdriver as a chisel, knife as a pry tool, wrench as a hammer. Manufacturer safety ratings only apply to intended use.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Adding extensions for leverage ("cheater bars")</strong> — multiplies force beyond the tool's design limits. Can snap the tool, strip the fastener, or cause violent slippage. An explicit WAC violation.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Using any tool tagged "DO NOT USE"</strong> — removing a tag or using a tagged tool is a safety violation and a disciplinary matter. Tags exist because someone identified a real risk.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Removing guards or safety features</strong> — blade guards, depth stops, and safety mechanisms are injury prevention devices, not obstacles. Removing them is prohibited and may void L&I compliance.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Working with damaged tools under schedule pressure</strong> — "We'll fix it after the job" is never acceptable. Schedule pressure is not a justification for knowingly using an unsafe tool.</div></li>
+      <li><span class="mk mk-ban">✗</span><div><strong>Leaving open blades or uncapped tools unattended</strong> — open utility knives or uncapped chisels in shared tool bags are a direct cause of lacerations. Always cap cutting tools when not actively in use.</div></li>
+    </ul>
+
+    <div class="callout c-red">
+      <strong>Supervisors own this too:</strong> A supervisor who witnesses a prohibited practice and says nothing bears equal responsibility for any resulting injury. Correct it in the moment — every time.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 10: MAINTENANCE -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-maintenance">
+    <div class="section-eyebrow">12 — Care</div>
+    <h2 class="section-h2">Maintain Your Tools</h2>
+    <p class="section-intro">A well-maintained tool is safer, more effective, and lasts significantly longer. Maintenance is not just a productivity consideration — it's a safety requirement under WAC 296-155-305.</p>
+
+    <div class="card-grid g2">
+      <div class="card card-t3"><div class="card-head"><span class="dot dot-blue"></span>Clean After Every Use</div><div class="card-body">Remove concrete, adhesive, caulk, grease, and debris from all surfaces before storing. Residue on striking faces reduces grip and accuracy. Adhesive buildup on blades accelerates dulling. A clean tool is a faster tool on the next job.</div></div>
+      <div class="card card-t3"><div class="card-head"><span class="dot dot-blue"></span>Dry Before Storage</div><div class="card-body">Never store tools while wet or damp. Moisture accelerates metal corrosion and degrades wooden handles over time. If tools were used in wet conditions, wipe dry and allow to air-out before returning to toolbox or bag.</div></div>
+      <div class="card card-t3 amber"><div class="card-head"><span class="dot dot-amber"></span>Sharpen Cutting Tools Regularly</div><div class="card-body">Sharp tools require less force, produce better results, and are significantly safer. Chisels, utility knife blades, hand saws, and scrapers should be sharpened or replaced before dullness becomes noticeable. Dull is never an acceptable working condition.</div></div>
+      <div class="card card-t3 amber"><div class="card-head"><span class="dot dot-amber"></span>Oil and Protect Metal Surfaces</div><div class="card-body">Apply a light coat of machine oil or rust-inhibiting product to exposed metal surfaces on tools stored for more than a few days. Especially important in the wet Pacific Northwest climate during restoration and exterior work.</div></div>
+      <div class="card card-t3 slate"><div class="card-head"><span class="dot dot-slate"></span>Handle Repair &amp; Replacement</div><div class="card-body">Loose wooden handles can be re-wedged if done correctly by a qualified person. However, cracked handles must be replaced entirely — cracking is a structural failure. Fiberglass handles with delamination must also be replaced.</div></div>
+      <div class="card card-t3 slate"><div class="card-head"><span class="dot dot-slate"></span>Know When to Replace</div><div class="card-body">Not every tool can or should be repaired. Heavily mushroomed striking tools, severely corroded cutting tools, or tools with compromised insulation should be disposed of. Attempting to "save" an unsafe tool through makeshift repair is a liability.</div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 11: STORAGE -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-storage">
+    <div class="section-eyebrow">13 — Storage</div>
+    <h2 class="section-h2">Proper Storage &amp; Transport</h2>
+    <p class="section-intro">How tools are stored and transported directly affects their condition, lifespan, and the safety of people who handle them. Good storage habits prevent damage before it starts.</p>
+
+    <ul class="clist">
+      <li><span class="mk mk-check">✓</span><div><strong>Use dedicated toolboxes or organized tool bags</strong> — Tools stored loose together chip, scratch, and dull each other's edges. Use tool rolls, foam inserts, or bags with individual pockets. A disorganized tool bag is where mystery lacerations come from.</div></li>
+      <li><span class="mk mk-check">✓</span><div><strong>Cap and sheath all cutting tools before storage</strong> — Blade guards, snap caps, and scabbards are not optional. Every cutting tool in a shared bag must have its edge protected to protect both the tool and the next person who reaches in.</div></li>
+      <li><span class="mk mk-check">✓</span><div><strong>Store away from moisture and temperature extremes</strong> — In vehicles, avoid storing tools in areas that trap moisture. Pacific Northwest climate accelerates corrosion on unprotected metal surfaces.</div></li>
+      <li><span class="mk mk-check">✓</span><div><strong>Never leave tools loose in vehicle beds or cargo areas</strong> — Unsecured tools become projectiles in the event of hard braking or an accident. Tools sliding around in a truck bed also sustain damage from impacts against each other.</div></li>
+      <li><span class="mk mk-check">✓</span><div><strong>Store tagged/defective tools separately</strong> — A tagged tool stored in the same bag as working tools will inevitably get confused with them. Move defective tools to a clearly labeled "for repair/disposal" container immediately.</div></li>
+      <li><span class="mk mk-check">✓</span><div><strong>Return borrowed tools to their designated location</strong> — Tools left in the wrong location don't get inspected and become unavailable when needed. Shared job-site tools should have known, consistent storage locations.</div></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 12: PPE -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-ppe">
+    <div class="section-eyebrow">14 — Protection</div>
+    <h2 class="section-h2">Required PPE</h2>
+    <p class="section-intro">PPE is your last line of defense — not your first. Proper tool selection, inspection, and technique come first. But when those controls are insufficient, PPE is what stands between the hazard and the injury.</p>
+
+    <div class="ppe-list">
+      <div class="ppe-row">
+        <div class="ppe-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M6.168 18.849A4 4 0 0 1 10 17h4a4 4 0 0 1 3.834 2.849"/></svg></div>
+        <div class="ppe-info"><div class="ppe-name">Safety Glasses — ANSI Z87.1 Rated</div><div class="ppe-detail">Required for all impact and cutting work. Side shields required when lateral projectile exposure exists. Z87.1 is the minimum rating — verify markings on lens or frame.</div></div>
+        <span class="ppe-req req-always">Always</span>
+      </div>
+      <div class="ppe-row">
+        <div class="ppe-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <div class="ppe-info"><div class="ppe-name">Hard Hat — Class E or G</div><div class="ppe-detail">Required on all active Onestà job sites. Class E (electrical) preferred on TI and renovation projects where circuit status may be uncertain.</div></div>
+        <span class="ppe-req req-always">All job sites</span>
+      </div>
+      <div class="ppe-row">
+        <div class="ppe-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div class="ppe-info"><div class="ppe-name">Steel-Toe or Composite-Toe Boots — ASTM F2413</div><div class="ppe-detail">Protects against dropped tools and heavy materials. EH-rated footwear required when working on or near energized systems.</div></div>
+        <span class="ppe-req req-always">Always</span>
+      </div>
+      <div class="ppe-row">
+        <div class="ppe-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></div>
+        <div class="ppe-info"><div class="ppe-name">Cut-Resistant Gloves — ANSI/ISEA 105, Level A2 Minimum</div><div class="ppe-detail">Required for all knife, blade, and hand saw work. Level A4–A6 for sustained high-risk cutting tasks. Select appropriate thickness for the task.</div></div>
+        <span class="ppe-req req-when">When cutting</span>
+      </div>
+      <div class="ppe-row">
+        <div class="ppe-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="ppe-info"><div class="ppe-name">Face Shield</div><div class="ppe-detail">Required in addition to safety glasses during chiseling, concrete striking, or any high-fragment task. A face shield alone does not replace safety glasses — both are required together.</div></div>
+        <span class="ppe-req req-when">Chiseling / demo</span>
+      </div>
+    </div>
+
+    <div class="callout c-amber">
+      <strong>PPE is the last line of defense:</strong> Proper tool condition, correct selection, and sound technique are the primary controls. PPE exists to mitigate the residual risk that remains after those controls are in place — not to compensate for skipping them.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 13: ELECTRICAL -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-electrical">
+    <div class="section-eyebrow">15 — Electrical Safety</div>
+    <h2 class="section-h2">Working Near Electricity</h2>
+    <p class="section-intro">Electrical hazards are especially relevant on renovation, TI, and restoration projects where circuit status may be unknown, panels may be live, and existing wiring may not match as-built drawings. Treat every circuit as energized until confirmed otherwise.</p>
+
+    <div class="card-grid g2">
+      <div class="card card-t3 red"><div class="card-head"><span class="dot dot-red"></span>When Insulated Tools Are Required</div><div class="card-body">Use insulated, 1000V-rated tools any time you are working within reach of exposed conductors, open panels, or circuits that have not been verified de-energized by a qualified person with a calibrated meter. On renovation work, this applies to most hand tool tasks in mechanical and electrical spaces.</div></div>
+      <div class="card card-t3 red"><div class="card-head"><span class="dot dot-red"></span>Never Use Damaged Tools Near Power</div><div class="card-body">Cracked or compromised insulation no longer provides voltage protection — even if the damage appears minor. Surface damage, bubbling, delamination, or cuts must disqualify the tool from electrical-adjacent use immediately.</div></div>
+      <div class="card card-t3 amber"><div class="card-head"><span class="dot dot-amber"></span>Be Aware of Energized Systems</div><div class="card-body">On occupied buildings and active TI work, panels and circuits serving other tenants may remain live while your work area is de-energized. Verify the scope of lockout/tagout with the project supervisor. Do not assume de-energization extends further than confirmed.</div></div>
+      <div class="card card-t3 amber"><div class="card-head"><span class="dot dot-amber"></span>Wet and Damp Conditions</div><div class="card-body">Electrical shock risk increases significantly in wet or damp environments — including post-water-damage restoration work. In these conditions, EH-rated boots and insulated gloves rated for the voltage are required in addition to insulated tools.</div></div>
+    </div>
+
+    <div class="callout c-red">
+      <strong>Lockout/Tagout (LOTO):</strong> If your task requires de-energizing a circuit, a proper LOTO procedure must be followed. Flipping a breaker and taping it is not a LOTO procedure. Refer to Onestà's LOTO program and WAC 296-803 for requirements.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 14: ERGONOMICS -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-ergonomics">
+    <div class="section-eyebrow">16 — Ergonomics</div>
+    <h2 class="section-h2">Reduce Strain &amp; Fatigue</h2>
+    <p class="section-intro">Musculoskeletal injuries from hand tool use develop gradually and are easy to dismiss — until they become chronic. Ergonomic awareness during routine tool work protects long-term function and productivity.</p>
+
+    <div class="card-grid g2">
+      <div class="card card-t3"><div class="card-head"><span class="dot dot-blue"></span>Use Properly Sized Tools</div><div class="card-body">A tool handle that is too large or too small for your hand forces you to compensate with grip tension and awkward wrist angles. For high-repetition tasks, select handles sized for your hand. Padded or cushioned grips reduce vibration transmission and fatigue.</div></div>
+      <div class="card card-t3"><div class="card-head"><span class="dot dot-blue"></span>Avoid Excessive Force</div><div class="card-body">Using a sharp, well-maintained tool in the right application requires far less force than compensating for dullness or mismatch. "Muscling" a task is both a safety risk and an early indicator that the wrong tool is being used or needs servicing.</div></div>
+      <div class="card card-t3"><div class="card-head"><span class="dot dot-blue"></span>Take Recovery Breaks</div><div class="card-body">For high-repetition tasks, take short breaks every 20–30 minutes to allow forearm and hand muscles to recover. Fatigue significantly increases the risk of loss of grip, slipping, and acute injury — not just cumulative strain.</div></div>
+      <div class="card card-t3"><div class="card-head"><span class="dot dot-blue"></span>Rotate Tasks When Possible</div><div class="card-body">Alternating between tasks that use different muscle groups reduces cumulative loading. On longer projects, task rotation across crew members is a practical ergonomic control that also keeps crew members cross-trained.</div></div>
+      <div class="card card-t3 slate"><div class="card-head"><span class="dot dot-slate"></span>Maintain Neutral Wrist Position</div><div class="card-body">Avoid prolonged work with the wrist bent up, down, or to the side. Awkward wrist positions significantly increase carpal tunnel and tendinitis risk. Reposition your body or adjust the work surface rather than bending your wrist to reach.</div></div>
+      <div class="card card-t3 slate"><div class="card-head"><span class="dot dot-slate"></span>Report Symptoms Early</div><div class="card-body">Tingling, numbness, persistent soreness, or reduced grip strength are early warning signs of cumulative trauma. Reporting early allows for intervention before the condition becomes debilitating. Early treatment is far more effective than late-stage intervention.</div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 15: STOP WORK -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-stop-work">
+    <div class="section-eyebrow">17 — Authority</div>
+    <h2 class="section-h2">You Have the Authority to Stop Work</h2>
+    <p class="section-intro">Every Onestà employee has the authority — and the responsibility — to stop work when a safety concern exists. This is not insubordination. It is an expected and supported part of our safety culture.</p>
+
+    <div class="callout c-green">
+      <strong>Stop Work Authority is unconditional.</strong> No supervisor, client, or schedule pressure overrides your right to stop an unsafe operation. The expectation is that you stop, report, and do not resume until the hazard is addressed.
+    </div>
+
+    <p class="section-intro" style="margin-top:1.25rem">Stop work if any of the following are present:</p>
+    <ul class="clist">
+      <li><span class="mk mk-red">!</span><div><strong>The tool is unsafe to use</strong> — damaged, defective, or tagged for removal.</div></li>
+      <li><span class="mk mk-red">!</span><div><strong>The task cannot be done safely with available tools</strong> — right tool is unavailable or the work method presents unacceptable risk.</div></li>
+      <li><span class="mk mk-red">!</span><div><strong>An unexpected hazard has been introduced</strong> — live wire discovered, unstable structure, unknown material (asbestos, lead) encountered.</div></li>
+      <li><span class="mk mk-red">!</span><div><strong>Environmental conditions have changed</strong> — area has become wet, visibility compromised, other trades have introduced adjacent hazards.</div></li>
+      <li><span class="mk mk-red">!</span><div><strong>A coworker is working unsafely</strong> — you observe a practice that creates risk for themselves or others.</div></li>
+    </ul>
+
+    <div class="callout c-blue" style="margin-top:1.25rem">
+      <strong>After stopping:</strong> Notify your supervisor immediately and clearly describe what you observed. Document if part of a formal near-miss or incident report. Do not resume work until the condition has been corrected and confirmed safe by your supervisor.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 16: SUPERVISOR -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-supervisor">
+    <div class="section-eyebrow">18 — Leadership</div>
+    <h2 class="section-h2">Supervisor Expectations</h2>
+    <p class="section-intro">Supervisors are the most important safety variable on any job site. Rules and training only translate to behavior change when supervisors model, enforce, and reinforce safe practices consistently — especially under schedule pressure.</p>
+
+    <ul class="clist">
+      <li><span class="mk mk-blue">→</span><div><strong>Enforce daily inspections</strong> — Verify workers have inspected their tools at the start of each day. Pre-task inspections are a WAC requirement, not a suggestion. Supervisors who skip this step create personal liability exposure.</div></li>
+      <li><span class="mk mk-blue">→</span><div><strong>Remove defective tools immediately — same day</strong> — A tagged tool that remains in circulation because a replacement wasn't sourced is a compliance violation and a management failure. Replacements must be available same-day.</div></li>
+      <li><span class="mk mk-blue">→</span><div><strong>Correct unsafe behaviors in the moment</strong> — Addressing a safety issue after the shift ends is not enforcement. Address it when you see it, directly and constructively. Delayed correction signals that unsafe behavior is acceptable while work is happening.</div></li>
+      <li><span class="mk mk-blue">→</span><div><strong>Document near-misses and incidents (APP requirement)</strong> — Washington State requires that near-misses and incidents be logged as part of your Accident Prevention Program. This documentation protects the company and enables pattern identification.</div></li>
+      <li><span class="mk mk-blue">→</span><div><strong>Enforce PPE compliance unconditionally</strong> — "They're experienced" is not a defense in an L&I investigation. PPE compliance is not subject to experience level, task duration, or worker preference. It is a site requirement.</div></li>
+      <li><span class="mk mk-blue">→</span><div><strong>Model the behavior</strong> — A supervisor observed using a damaged tool or bypassing PPE directly undermines every safety message delivered in toolbox talks. Prepare Humbly, Perform Confidently — that applies to safety leadership too.</div></li>
+      <li><span class="mk mk-blue">→</span><div><strong>Create a near-miss culture</strong> — The goal is for crew members to report near-misses without fear of blame. Near-misses are free warnings. An unreported near-miss becomes a future injury. Supervisors set this tone entirely.</div></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 17: DISCUSSION -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-discussion">
+    <div class="section-eyebrow">19 — Meeting Tool</div>
+    <h2 class="section-h2">Crew Discussion Questions</h2>
+    <p class="section-intro">Use these prompts to drive real conversation during monthly safety meetings. The goal is not to review slides — it's to surface actual field experience, address real habits, and build shared ownership of safety on the crew.</p>
+
+    <div class="disc-list">
+      <div class="disc-card"><span class="disc-n">Q1</span><div><div class="disc-q">What's the most common hand tool misuse you've seen on a jobsite — by yourself or someone else?</div><div class="disc-sub">No wrong answers. Normalizing the conversation about near-misses starts here.</div></div></div>
+      <div class="disc-card"><span class="disc-n">Q2</span><div><div class="disc-q">What tools do you see most commonly misused or improvised on our specific type of work — restoration, TI, and renovation?</div><div class="disc-sub">Jobsite-specific hazards are more useful than generic ones.</div></div></div>
+      <div class="disc-card"><span class="disc-n">Q3</span><div><div class="disc-q">Have you ever worked with a damaged tool because a replacement wasn't available? What did you do?</div><div class="disc-sub">This surfaces gaps in our tool supply and procurement process — actionable for supervisors.</div></div></div>
+      <div class="disc-card"><span class="disc-n">Q4</span><div><div class="disc-q">What stops people from speaking up when they see an unsafe tool or unsafe practice on the job?</div><div class="disc-sub">The answer usually involves fear of slowing down, or concern about being the one who "caused a problem."</div></div></div>
+      <div class="disc-card"><span class="disc-n">Q5</span><div><div class="disc-q">Scenario: A foreman sees a mushroomed chisel but says nothing because the job needs to be done today. What are the real costs of that decision?</div><div class="disc-sub">Links schedule pressure to safety outcomes — and to supervisor accountability.</div></div></div>
+      <div class="disc-card"><span class="disc-n">Q6</span><div><div class="disc-q">Any recent near-misses on this crew or other crews worth sharing? What would have changed the outcome?</div><div class="disc-sub">Near-misses shared openly are the most effective safety training available.</div></div></div>
+      <div class="disc-card"><span class="disc-n">Q7</span><div><div class="disc-q">What one thing could we change or add to our daily routine — starting this week — to reduce hand tool injury risk on our crew?</div><div class="disc-sub">Crew-generated improvements are far more durable than management mandates.</div></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 18: TAKEAWAYS -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-takeaways">
+    <div class="section-eyebrow">20 — Summary</div>
+    <h2 class="section-h2">Key Takeaways</h2>
+    <p class="section-intro">If there are six things every Onestà field employee remembers from this resource, these are them.</p>
+
+    <div class="tk-list">
+      <div class="tk-row"><span class="tk-n">01</span><div class="tk-txt"><strong>Inspect every tool before every use.</strong> Pre-use inspection is required by law and takes less than 60 seconds. No exceptions.</div></div>
+      <div class="tk-row"><span class="tk-n">02</span><div class="tk-txt"><strong>Use the right tool for the task.</strong> Improvisation is not ingenuity — it's the leading cause of hand tool injuries.</div></div>
+      <div class="tk-row"><span class="tk-n">03</span><div class="tk-txt"><strong>Remove defective tools immediately.</strong> Tag it. Remove it from the work area. Report it. Replace it before work resumes.</div></div>
+      <div class="tk-row"><span class="tk-n">04</span><div class="tk-txt"><strong>Wear your PPE — every task, every time.</strong> Safety glasses are non-negotiable. PPE is the last line of defense, not the first.</div></div>
+      <div class="tk-row"><span class="tk-n">05</span><div class="tk-txt"><strong>Speak up.</strong> Near-misses, unsafe tools, unsafe practices — say something. "Own It, Don't Hide It" protects everyone on the crew.</div></div>
+      <div class="tk-row"><span class="tk-n">06</span><div class="tk-txt"><strong>WA L&amp;I compliance is not optional.</strong> WAC 296-155-360, 296-155-305, and 296-800-160 are enforceable regulations. These standards are the floor — Onestà's expectations start there and go further.</div></div>
+    </div>
+
+    <div class="closing">
+      <blockquote>Hand tools are simple — but misuse causes serious injuries. Take the time to do it right, every time. Start strong, finish strong.</blockquote>
+      <cite>Onestà General Contracting · Safety Program</cite>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Onestà General Contracting · Hand Tool Safety Resource</span>
+    <span>
+      <a href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-155-360" target="_blank">WAC 296-155-360</a> ·
+      <a href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-155-305" target="_blank">WAC 296-155-305</a> ·
+      <a href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-800-160" target="_blank">WAC 296-800-160</a>
+    </span>
+  </div>
+
+</div><!-- end page -->
+
+<script>
+function showTab(id) {
+  // Hide all panels
+  var panels = document.querySelectorAll('.tab-panel');
+  for (var i = 0; i < panels.length; i++) {
+    panels[i].classList.remove('active');
+  }
+  // Deactivate all buttons
+  var buttons = document.querySelectorAll('.tab-btn');
+  for (var j = 0; j < buttons.length; j++) {
+    buttons[j].classList.remove('active');
+  }
+  // Show target panel
+  var panel = document.getElementById('tab-' + id);
+  if (panel) { panel.classList.add('active'); }
+  // Activate clicked button
+  var btn = event.currentTarget;
+  if (btn) { btn.classList.add('active'); }
+  // Scroll page to top of tab content
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
